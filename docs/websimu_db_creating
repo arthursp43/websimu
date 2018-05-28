@@ -1,0 +1,69 @@
+create table endereco(
+	CEP varchar(9) constraint PRIMARY KEY,
+    rua varchar(70),
+    bairro varchar(50),
+    cidade varchar(50),
+    estado varchar(40),
+    pais varchar(40));
+
+create table usuario_pessoa(
+	idUsuario int not null PRIMARY KEY AUTO_INCREMENT,
+	nomeCompleto varchar(80) not null,
+	CPF varchar(14) not null,
+	sexo varchar(1),
+	celular varchar(14) not null,
+	telefone varchar(13),
+	nomeMae varchar(80) not null,
+    nomePai varchar(80) not null,
+	dtNascimento varchar(10) not null,
+	email varchar(50) not null,
+	numero int not null,
+	complemento varchar(50),
+    CEP varchar(9) not null,
+	constraint fk_cep FOREIGN KEY (CEP) REFERENCES endereco(CEP));
+
+
+	create table usuario_empresa(
+
+	idEmpresa int not null PRIMARY KEY AUTO_INCREMENT,
+    nomeEmpresa varchar(50) not null,
+    CNPJ varchar(18) not null,
+    telefone varchar(14),
+    email varchar(50) not null,
+    complemento varchar(50),
+    CEP varchar(9) not null,
+    constraint fk__empresa_cep FOREIGN KEY (CEP) REFERENCES endereco(CEP));
+
+    create table login(
+    idCadastro int PRIMARY KEY AUTO_INCREMENT not null,
+    login varchar(30) not null, senha varchar(20) not null,
+    idPessoa int,
+    idEmpresa int,
+    constraint fk_login_pessoa FOREIGN KEY (idPessoa) REFERENCES usuario_pessoa(idPessoa),
+    constraint fk_login_empresa FOREIGN KEY (idEmpresa) REFERENCES usuario_empresa(idEmpresa))
+
+
+create table cartao(
+	idCartao int not null PRIMARY KEY AUTO_INCREMENT,
+	numeroCartao varchar(20) not null,
+    tipoCartao varchar(1),
+    viaCartao varchar(1),
+	idPessoa int not null,
+	constraint fk_cartao_usuario_pessoa FOREIGN KEY (idPessoa) REFERENCES usuario_pessoa(idPessoa));
+
+	create table pedido(
+	idPedido int PRIMARY KEY AUTO_INCREMENT not null,
+	dtPedido varchar(10) not null,
+	qtPassagem int(2) not null,
+	valorPagar varchar(10) not null,
+	idPessoa int not null,
+	constraint fk_pedido_idUPessoa FOREIGN KEY (idPessoa) REFERENCES usuario_pessoa(idPessoa))
+
+CREATE TABLE pagamento(
+	idPgto int not null  PRIMARY KEY AUTO_INCREMENT,
+    dtPgto varchar(10) not null,
+    formaPgto varchar(1) not null,
+    valorPago varchar(10) not null,
+    statusPgto varchar(1),
+    idPessoa int not null,
+	constraint fk_pagamento_pessoa FOREIGN KEY (idPessoa) REFERENCES usuario_pessoa(idPessoa))
