@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01f0829d-a002-4acb-bbd2-ecae785b0ad4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/websimu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/websimu.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/websimu_db_creating" beforeDir="false" afterPath="$PROJECT_DIR$/docs/websimu_db_creating" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
               <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="websimu_db_creating" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/websimu_db_creating">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -104,6 +105,7 @@
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/docs/websimu_db_creating" />
       </list>
     </option>
   </component>
@@ -163,7 +165,7 @@
       <path value="$PROJECT_DIR$/vendor/twitter/bootstrap" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="20" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -190,8 +192,7 @@
             <path>
               <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
               <item name="websimu" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
@@ -299,12 +300,12 @@
       <workItem from="1527302490215" duration="4627000" />
       <workItem from="1527548754408" duration="526000" />
       <workItem from="1527549282769" duration="277000" />
-      <workItem from="1527549567193" duration="2988000" />
+      <workItem from="1527549567193" duration="3081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8418000" />
+    <option name="totallyTimeSpent" value="8511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -567,6 +568,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/websimu_db_creating">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
         </state>
       </provider>
     </entry>

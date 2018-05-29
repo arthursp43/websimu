@@ -7,7 +7,7 @@ create table endereco(
     pais varchar(40));
 
 create table usuario_pessoa(
-	idUsuario int not null PRIMARY KEY AUTO_INCREMENT,
+	idPessoa int not null PRIMARY KEY AUTO_INCREMENT,
 	nomeCompleto varchar(80) not null,
 	CPF varchar(14) not null,
 	sexo varchar(1),
@@ -65,5 +65,6 @@ CREATE TABLE pagamento(
     formaPgto varchar(1) not null,
     valorPago varchar(10) not null,
     statusPgto varchar(1),
-    idPessoa int not null,
-	constraint fk_pagamento_pessoa FOREIGN KEY (idPessoa) REFERENCES usuario_pessoa(idPessoa))
+    idPedido int not null,
+	constraint fk_pagamento_pessoa FOREIGN KEY idPedido REFERENCES pedido(idPedido ))
+s
