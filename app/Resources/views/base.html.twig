@@ -13,10 +13,24 @@
 
     </head>
     <body>
+    <nav class="navbar navbar-light bg-light">
+        <a id="logo" class="navbar-brand" href="#">
+            <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            SIMU
+        </a>
+    </nav>
         {% block body %}{% endblock %}
 
-        {% block javascripts %}{% endblock %}
+
+        {% block javascripts %}
+
+
+        {% endblock %}
     </body>
+
+    <div class="card-footer text-muted">
+        2 days ago
+    </div>
     
 
 </html>
