@@ -24,7 +24,8 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/registrar")
+     * @Route("/registrar", name="registrar")
+     *
      */
     public function registrarAction()
     {

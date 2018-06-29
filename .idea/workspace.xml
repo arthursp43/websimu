@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01f0829d-a002-4acb-bbd2-ecae785b0ad4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/CartaoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/EmpresaRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/EnderecoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/ItensPedidoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/LoginRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/PagamentoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/UsuarioRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,89 +23,38 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+            <state relative-caret-position="408">
+              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PadraoRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/PadraoRepository.php">
+      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="374">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+              <folding>
+                <element signature="e#44#67#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartaoRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/CartaoRepository.php">
+      <file leaf-file-name="login.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="306">
+              <caret line="18" column="118" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="118" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmpresaRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/EmpresaRepository.php">
+      <file leaf-file-name="registrar.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnderecoRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/EnderecoRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItensPedidoRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/ItensPedidoRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/LoginRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PagamentoRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/PagamentoRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PedidoRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioRepository.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/UsuarioRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="444">
+              <caret line="64" column="92" lean-forward="true" selection-start-line="64" selection-start-column="92" selection-end-line="64" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -126,9 +72,6 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/docs/websimu_db_creating" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
@@ -148,6 +91,10 @@
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Repository/PagamentoRepository.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Repository/UsuarioRepository.php" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php" />
       </list>
     </option>
   </component>
@@ -236,12 +183,6 @@
             <path>
               <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
               <item name="websimu" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="websimu" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -267,14 +208,24 @@
               <item name="websimu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
               <item name="websimu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="websimu" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Default" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -291,6 +242,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\arthu\websimu\src\UsuarioBundle\Controller" />
       <recent name="C:\Users\arthu\websimu\src\UsuarioBundle\Repository" />
       <recent name="C:\Users\arthu\websimu\src\UsuarioBundle\Resources\views\Default" />
       <recent name="C:\Users\arthu\websimu\app\Resources\views\default" />
@@ -326,7 +278,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10523000" />
+    <option name="totallyTimeSpent" value="11585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -393,9 +345,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -525,20 +474,6 @@
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/UsuarioBundle.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="70" column="136" selection-start-line="70" selection-start-column="136" selection-end-line="70" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="22" selection-start-line="7" selection-start-column="16" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -633,13 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/CartaoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -678,7 +606,7 @@
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/PadraoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -689,6 +617,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/UsuarioRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -696,10 +631,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/UsuarioRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="306">
+          <caret line="18" column="118" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="64" column="92" lean-forward="true" selection-start-line="64" selection-start-column="92" selection-end-line="64" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding>
+            <element signature="e#44#67#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
