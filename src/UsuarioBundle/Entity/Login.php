@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -27,6 +27,34 @@ class Login
      * @ORM\Column(name="login", type="string", length=45, nullable=false)
      */
     private $login;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="senha", type="string", length=45, nullable=false)
+     */
+    private $senha;
+
+    /**
+     * @return string
+     */
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
+    /**
+     * @param string $senha
+     * @return Login
+     */
+    public function setSenha($senha)
+    {
+        $this->senha = $senha;
+        return $this;
+    }
+
+
 
     /**
      * @return int
