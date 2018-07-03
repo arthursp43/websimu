@@ -20,9 +20,20 @@ class LoginController extends Controller
      */
     public function registrarUsuarioAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
 
+            //var_dump($request->request->get('senha'));exit;
 
+            $login = $request->request->get('login');
+            $senha = $request->request->get('senha');
+            $Login = new Login();
 
+            $Login->setLogin($request->request->get('login'));
+            $Login->setSenha($request->request->get('senha'));
+
+            var_dump($Login);exit;
+            $em->persist($Login);
+            $em->flush();
 
             $usuario = new Usuario();
 
@@ -39,8 +50,7 @@ class LoginController extends Controller
             $cep = $request->request->get('cep');
             $complemento = $request->request->get('complemento');
 
-            $login = $request->request->get('login');
-            $senha = $request->request->get('senha');
+
 
             $usuario->setNome($nome);
             $usuario->setSobrenome($sobrenome);
@@ -54,15 +64,9 @@ class LoginController extends Controller
             $usuario->setCep($cep);
             $usuario->setComplemento($complemento);
 
-            $em = $this->getDoctrine()->getManager();
 
-            $Login = new Login();
 
-            $Login->setLogin($login);
-            $Login->setSenha($senha);
 
-            $em->persist($Login);
-            $em->flush();
 
 
             $LoginRP = $this->getDoctrine()->getRepository('UsuarioBundle:Login');

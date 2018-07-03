@@ -75,7 +75,7 @@ Cadastro = {
         dadosFormulario['login'] =myself.campos.login.val();
         dadosFormulario['senha'] =myself.campos.senha.val();
 
-        alert("oi");
+
         myself.executarEnvio(dadosFormulario);
     },
 
