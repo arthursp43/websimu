@@ -6,6 +6,8 @@ namespace UsuarioBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use UsuarioBundle\Entity\Endereco;
 use UsuarioBundle\Entity\Login;
 use UsuarioBundle\Entity\Usuario;
 
@@ -22,20 +24,14 @@ class LoginController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-            //var_dump($request->request->get('senha'));exit;
-
-            $login = $request->request->get('login');
-            $senha = $request->request->get('senha');
-            $Login = new Login();
-
-            $Login->setLogin($request->request->get('login'));
-            $Login->setSenha($request->request->get('senha'));
-
-            var_dump($Login);exit;
-            $em->persist($Login);
-            $em->flush();
-
             $usuario = new Usuario();
+            $login = new Login();
+
+            $login->setLogin($request->request->get('login'));
+            $login->setSenha($request->request->get('senha'));
+
+            $em->persist($login);
+            $em->flush();
 
 
             $nome = $request->request->get('nome');
@@ -50,7 +46,7 @@ class LoginController extends Controller
             $cep = $request->request->get('cep');
             $complemento = $request->request->get('complemento');
 
-
+            //var_dump($cep);exit;
 
             $usuario->setNome($nome);
             $usuario->setSobrenome($sobrenome);
@@ -61,20 +57,19 @@ class LoginController extends Controller
             $usuario->setTelefone($telefone);
             $usuario->setNomepai($nomePai);
             $usuario->setEmail($email);
-            $usuario->setCep($cep);
+
+            $endereco = $this->getDoctrine()->getRepository('UsuarioBundle:Endereco')->find($cep);
+
+            $usuario->setCep($endereco);
             $usuario->setComplemento($complemento);
-
-
-
-
 
 
             $LoginRP = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
 
-            $Login = $LoginRP->buscarUltimoLogin();
+            $Login = $LoginRP->findBuscarUltimoLogin();
 
-            $usuario->setLogin($Login);
-
+            $usuario->setIdlogin($Login);
+            //var_dump($usuario);exit;
             $em->persist($usuario);
             $em->flush();
             return new JsonResponse(array(), 200);

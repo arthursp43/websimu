@@ -10,14 +10,14 @@ namespace UsuarioBundle\Repository;
  */
 class LoginRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function buscarUltimoLogin()
+    public function findBuscarUltimoLogin()
     {
 
         return $this->getEntityManager()
             ->createQuery(
                 "SELECT l FROM UsuarioBundle:Login l WHERE l.id = (select MAX(li.id) from UsuarioBundle:Login li)"
             )
-            ->getResult();
+            ->getSingleResult();
     }
 
 

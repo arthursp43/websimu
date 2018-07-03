@@ -4,11 +4,13 @@ namespace UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * Login
  *
  * @ORM\Table(name="login")
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UsuarioBundle\Repository\LoginRepository")
  */
 class Login
 {
@@ -19,7 +21,8 @@ class Login
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idlogin;
+
+    private $id;
 
     /**
      * @var string
@@ -59,18 +62,18 @@ class Login
     /**
      * @return int
      */
-    public function getIdlogin()
+    public function getIdl()
     {
-        return $this->idlogin;
+        return $this->id;
     }
 
     /**
      * @param int $idlogin
      * @return Login
      */
-    public function setIdlogin($idlogin)
+    public function setId($id)
     {
-        $this->idlogin = $idlogin;
+        $this->id = $id;
         return $this;
     }
 

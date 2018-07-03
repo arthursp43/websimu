@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Usuario
  *
  * @ORM\Table(name="usuario", indexes={@ORM\Index(name="fk_Usuario_Login1_idx", columns={"idLogin"}), @ORM\Index(name="fk_Usuario_Endereco1_idx", columns={"CEP"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UsuarioBundle\Repository\UsuarioRepository")
  */
 class Usuario
 {
@@ -17,7 +17,7 @@ class Usuario
      *
      * @ORM\Column(name="idUsuario", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $idusuario;
 
@@ -94,8 +94,6 @@ class Usuario
     /**
      * @var \Endereco
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\OneToOne(targetEntity="Endereco")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="CEP", referencedColumnName="CEP")
@@ -106,8 +104,6 @@ class Usuario
     /**
      * @var \Login
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\OneToOne(targetEntity="Login")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idLogin", referencedColumnName="idLogin")
