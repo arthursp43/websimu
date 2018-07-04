@@ -2,7 +2,9 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+
+        </div>
         <div class="col-sm-4">
             <forma>
                 <div class="form-group">
@@ -68,13 +70,13 @@
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Login:</label>
-                    <input type="text" class="form-control" id="login" aria-describedby="emailHelp" placeholder="Número">
+                    <input type="text" class="form-control" id="login" aria-describedby="emailHelp" placeholder="Login">
 
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Senha:</label>
-                    <input type="password" class="form-control" id="senha" aria-describedby="emailHelp" placeholder="Número">
+                    <input type="password" class="form-control" id="senha" aria-describedby="emailHelp" placeholder="Senha">
 
                 </div>
 
@@ -86,17 +88,15 @@
         </div>
         <div class="col-sm-4"></div>
     </div>
-    {% block javascripts %}
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    {% javascripts %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 
-    {%  endblock %}
 
     {% javascripts
-    '@UsuarioBundle/Resources/public/js/registroUsuario.js'
+        '@UsuarioBundle/Resources/public/js/registroUsuario.js'
         '@UsuarioBundle/Resources/public/js/bootbox.min.js'
     %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
 
 {% endblock %}

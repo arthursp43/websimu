@@ -17,6 +17,32 @@ class LoginController extends Controller
 
 
     /**
+     * @Route("/efetuar-login", name="efetuar_login")
+     *
+     */
+    public function efetuarLoginAction(Request $request)
+    {
+        $login = $request->request->get('login');
+        $senha = $request->request->get('senha');
+
+        //var_dump($login);exit;
+        $loginUsuario = $this->getDoctrine()->getRepository('UsuarioBundle:Login')->buscaLogin($login,$senha);
+
+
+
+        $usuario = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario')->buscaUsuario($loginUsuario);
+
+
+        return $this->render('@Usuario/Default/homepage.html.twig',array(
+            'usuario' =>$usuario
+        ));
+
+    }
+
+
+
+
+    /**
      * @Route("/novo-usuario", name="novo_usuario")
      *
      */
@@ -72,7 +98,7 @@ class LoginController extends Controller
             //var_dump($usuario);exit;
             $em->persist($usuario);
             $em->flush();
-            return new JsonResponse(array(), 200);
+            return new JsonResponse("",200);
 
 
 

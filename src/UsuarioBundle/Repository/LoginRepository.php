@@ -20,6 +20,16 @@ class LoginRepository extends \Doctrine\ORM\EntityRepository
             ->getSingleResult();
     }
 
+    public function buscaLogin($login,$senha)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT l FROM UsuarioBundle:Login l where l.login =".$login." and l.senha =".$senha
+            )
+            ->getSingleResult();
+    }
+
 
 
 }

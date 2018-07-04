@@ -75,13 +75,14 @@ Cadastro = {
         dadosFormulario['login'] =myself.campos.login.val();
         dadosFormulario['senha'] =myself.campos.senha.val();
 
-        console.log(dadosFormulario['cep']);
+
 
         myself.executarEnvio(dadosFormulario);
     },
 
 
     executarEnvio : function (dadosFormulario) {
+        console.log("ate aqui");
         $.ajax({
             url: 'http://127.0.0.1:8000/novo-usuario',
             type: "post",
@@ -89,7 +90,7 @@ Cadastro = {
             blockUI: true,
             data: dadosFormulario,
             success: function(response) {
-
+                console.log("foi");
             }
         });
     },

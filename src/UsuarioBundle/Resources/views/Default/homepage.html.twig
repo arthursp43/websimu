@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table>
+
+        <tr>
+            <td style="vertical-align: top;">
+                <ul class="list-group">
+                    <li class="list-group-item active"><a href="" style="color: #FFFFFF">Minha Conta</a></li>
+                    <li class="list-group-item"><a href="">Efetuar Recarga</a></li>
+                    <li class="list-group-item"><a href="">Configurações</a></li>
+                </ul>
+            </td>
+            <td>
+                <div class="card">
+                    <h5 class="card-header">Minhas Informações</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Nome: {{ usuario.nome }}</h5>
+                        <p class="card-text">Data Nascimento: {{ usuario.dtnascimento }}</p>
+                        <p class="card-text">Sexo: {{ usuario.sexo }}</p>
+                        <p class="card-text">CPF: {{ usuario.cpf }}</p>
+                        <p class="card-text">CEP: {{ usuario.cep }}</p>
+                        <p class="card-text">Celular: {{ usuario.celular }} Telefone: {{ usuario.telefone }}</p>
+                        <a href="#" class="btn btn-primary">Editar Informações</a>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="card">
+                    <h5 class="card-header">Meus Cartões</h5>
+                    <div class="card-body">
+                        <h4 class="card-title">Cartão: 4056-5023-7523-7845</h4>
+                        <h5 class="card-title">Titular: Arthur Silva Pereira</h5>
+                        <p class="card-text">Validade: 05/05/2019</p>
+                        <p class="card-text">Status: ATIVO</p>
+                        <p class="card-text"><a href="">Ver Saldo</a></p>
+
+                    </div>
+                    <div class="card-body">
+                       <h4 class="card-title">Cartão: 2354-6745-1248-4758</h4>
+                        <h5 class="card-title">Titular: Arthur Silva Pereira</h5>
+                        <p class="card-text">Validade: 10/10/2019</p>
+                        <p class="card-text">Status: INATIVO</p>
+                        <p class="card-text"><a href="">Ver Saldo</a></p>
+
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary">Solicitar Novo Cartão</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    {% javascripts %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+
+{% endblock %}

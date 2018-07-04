@@ -16,7 +16,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/login")
+     * @Route("/login", name="login")
      */
     public function loginAction()
     {

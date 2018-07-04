@@ -10,4 +10,13 @@ namespace UsuarioBundle\Repository;
  */
 class UsuarioRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function buscaUsuario($login)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT u FROM UsuarioBundle:Usuario u where u.idlogin =".$login
+            )
+            ->getSingleResult();
+    }
 }
