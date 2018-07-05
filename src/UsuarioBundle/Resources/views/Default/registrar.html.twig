@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<br><br><br>
     <div class="row">
         <div class="col-sm-4">
 
@@ -88,17 +89,19 @@
         </div>
         <div class="col-sm-4"></div>
     </div>
-    {% javascripts %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-
-
-    {% javascripts
-        '@UsuarioBundle/Resources/public/js/registroUsuario.js'
-        '@UsuarioBundle/Resources/public/js/bootbox.min.js'
-    %}
-    {% endjavascripts %}
 
 {% endblock %}
+
+{% block javascripts %}
+        {% javascripts
+            '@UsuarioBundle/Resources/public/js/registroUsuario.js'
+            '@UsuarioBundle/Resources/public/js/bootbox.min.js'
+        %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+
+        {% endjavascripts %}
+{% endblock %}
+    
+
 
 

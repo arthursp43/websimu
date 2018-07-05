@@ -46,7 +46,7 @@ Cadastro = {
 
 
         myself.campos.botaoSalvar.click(function(){
-
+            
                     myself.recolherDadosFormularioEEnviar();
 
 
@@ -90,7 +90,7 @@ Cadastro = {
             blockUI: true,
             data: dadosFormulario,
             success: function(response) {
-                console.log("foi");
+                alert('js funcionando com ajax');
             }
         });
     },
