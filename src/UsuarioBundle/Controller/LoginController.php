@@ -4,6 +4,7 @@ namespace UsuarioBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -20,9 +21,8 @@ class LoginController extends Controller
 
     /**
      * @Route("/efetuar-login", name="efetuar_login")
-     *
      */
-    public function efetuarLoginAction(Request $request)
+    public function homepageAction(Request $request)
     {
 
         $login=$request->request->get('login');
@@ -36,26 +36,27 @@ class LoginController extends Controller
          */
         $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
 
-
+        $Login=null;
 
         $Login = $LoginRepositorio->buscaLogin($login,$senha);
 
 
+        return $this->render('@Usuario/Default/homepage.html.twig');
 
-
-        if(count($Login)!=0)
+/*
+        if($Login)
         {
             $usuario = $UsuarioRepository->buscaUsuario($Login);
             //return $this->render('@Usuario/Default/homepage.html.twig');
-
+                return $this->redirectToRout('')
             //var_dump($usuario);exit;
-            return $this->redirectToRoute('homepage', array(), 301);
+            
         }
         else
         {
 
             return new JsonResponse(array(),500);
-        }
+        }*/
 
 
 
