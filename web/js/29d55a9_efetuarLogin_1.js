@@ -2,12 +2,12 @@
 
 $(document).ready(function() {
     setTimeout(function(){
-        Cadastro.iniciar();
+        Login.iniciar();
 
     },100);
 });
 
-Cadastro = {
+Login = {
     $formulario: null,
     dados: {},
     campos: [],
@@ -25,7 +25,7 @@ Cadastro = {
 
 
 
-        myself.campos.botaoSalvar = $("#btn-salvar");
+        myself.campos.botaoSalvar = $("#btn-login");
 
 
 
@@ -38,7 +38,7 @@ Cadastro = {
 
         myself.campos.botaoSalvar.click(function(){
 
-            //myself.recolherDadosFormularioEEnviar();
+            myself.recolherDadosFormularioEEnviar();
 
 
         });
@@ -53,23 +53,24 @@ Cadastro = {
         dadosFormulario['login'] =myself.campos.login.val();
         dadosFormulario['senha'] =myself.campos.senha.val();
 
-        console.log(dadosFormulario);
+        //console.log(dadosFormulario);
 
-        //myself.executarEnvio(dadosFormulario);
+        myself.executarEnvio(dadosFormulario);
     },
 
 
     executarEnvio : function (dadosFormulario) {
-        console.log("ate aqui");
+
         $.ajax({
             url: 'http://127.0.0.1:8000/efetuar-login',
             type: "post",
             cache: false,
             blockUI: true,
             data: dadosFormulario,
-            success: function(response) {
-                console.log("foi");
+            error: function(response) {
+                alert("Login/Senha não compativeis");
             }
+
         });
     },
 

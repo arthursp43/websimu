@@ -8,11 +8,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/usuario")
+     * @Route("/homepage", name="homepage")
      */
-    public function indexAction()
+    public function homepageAction()
     {
-        return $this->render('@Usuario/Default/index.html.twig');
+        return $this->render('@Usuario/Default/homepage.html.twig');
     }
 
     /**

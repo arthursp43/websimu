@@ -90,7 +90,7 @@ Cadastro = {
             blockUI: true,
             data: dadosFormulario,
             success: function(response) {
-                alert('js funcionando com ajax');
+                location.href='http://127.0.0.1:8000/login';
             }
         });
     },

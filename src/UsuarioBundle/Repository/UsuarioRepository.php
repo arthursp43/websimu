@@ -15,8 +15,8 @@ class UsuarioRepository extends \Doctrine\ORM\EntityRepository
 
         return $this->getEntityManager()
             ->createQuery(
-                "SELECT u FROM UsuarioBundle:Usuario u where u.idlogin =".$login
-            )
+                "SELECT u FROM UsuarioBundle:Usuario u where u.idlogin = :login "
+            )->setParameter('login',$login)
             ->getSingleResult();
     }
 }

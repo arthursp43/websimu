@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use UsuarioBundle\Entity\Endereco;
 use UsuarioBundle\Entity\Login;
 use UsuarioBundle\Entity\Usuario;
+use UsuarioBundle\Repository\LoginRepository;
+use UsuarioBundle\Repository\UsuarioRepository;
 
 
 class LoginController extends Controller
@@ -23,8 +25,49 @@ class LoginController extends Controller
     public function efetuarLoginAction(Request $request)
     {
 
+        $login=$request->request->get('login');
+        $senha=$request->request->get('senha');
 
-        return $this->render('@Usuario/Default/homepage.html.twig');
+        /* @var UsuarioRepository
+         */
+        $UsuarioRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario');
+
+        /* @var UsuarioRepository
+         */
+        $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
+
+
+
+        $Login = $LoginRepositorio->buscaLogin($login,$senha);
+
+
+
+
+        if(count($Login)!=0)
+        {
+            $usuario = $UsuarioRepository->buscaUsuario($Login);
+            //return $this->render('@Usuario/Default/homepage.html.twig');
+
+            //var_dump($usuario);exit;
+            return $this->redirectToRoute('homepage', array(), 301);
+        }
+        else
+        {
+
+            return new JsonResponse(array(),500);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

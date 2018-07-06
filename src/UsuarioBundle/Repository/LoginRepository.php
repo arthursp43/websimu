@@ -22,12 +22,14 @@ class LoginRepository extends \Doctrine\ORM\EntityRepository
 
     public function buscaLogin($login,$senha)
     {
-
-        return $this->getEntityManager()
+        $existe=$this->getEntityManager()
             ->createQuery(
-                "SELECT l FROM UsuarioBundle:Login l where l.login =".$login." and l.senha =".$senha
-            )
-            ->getSingleResult();
+                "SELECT l FROM UsuarioBundle:Login l where l.login = :login and l.senha = :senha"
+            )->setParameter('login',$login)
+            ->setParameter('senha',$senha)
+            ->getResult();
+
+        return $existe;
     }
 
 

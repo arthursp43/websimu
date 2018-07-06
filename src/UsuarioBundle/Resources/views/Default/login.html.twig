@@ -15,24 +15,22 @@
                     <label for="exampleInputPassword1">Senha</label>
                     <input type="password" class="form-control" id="senha" placeholder="Senha">
                 </div>
+                <button type="button" id="btn-login" name="btn-salvar" class="btn btn-primary btn-lg" role="button">Login</button>
+                <button type="button" id="btn-registrar" name="btn-salvar" class="btn btn-primary btn-lg" role="button">Quero Me Registrar!</button>
 
-                <a id="btn-salvar" name="btn-salvar" class="btn btn-primary btn-lg"  role="button">Entrar</a>
-                <a class="btn btn-primary btn-lg" href="{{ path('registrar') }}" role="button">Quero me Registrar!</a>
 
         </div>
         <div class="col-sm-4"></div>
     </div>
 
-    {% javascripts %}
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+        '@UsuarioBundle/Resources/public/js/Login/efetuarLogin.js'
+        '@UsuarioBundle/Resources/public/js/bootbox.min.js'
+    %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
 
     {% endjavascripts %}
-
-
-    {% javascripts
-        '@UsuarioBundle/Resources/public/js/Login/efetuarLogin.js'
-    %}
-    {% endjavascripts %}
-
-
 {% endblock %}
