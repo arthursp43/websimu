@@ -51,6 +51,10 @@ class LoginController extends Controller
          */
         $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
 
+        /* @var CartaoRepository
+         */
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+
         
 
         $Login = $LoginRepositorio->buscaLogin($login,$senha);
@@ -60,7 +64,13 @@ class LoginController extends Controller
 
         if(count($Login)!=0)
         {
-            return $this->render('@Usuario/Default/homepage.html.twig');
+            //$usuario = "a";
+            $cartoes = $CartaoRepository->findAll();
+            $usuario = $UsuarioRepository->buscaUsuario($Login);
+            return $this->render('@Usuario/Default/homepage.html.twig',array(
+                'usuario'=>$usuario,
+                'cartoes'=>$cartoes
+            ));
         }
         else
         {

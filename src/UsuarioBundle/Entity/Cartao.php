@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Cartao
  *
  * @ORM\Table(name="cartao", indexes={@ORM\Index(name="fk_Cartao_Usuario1_idx", columns={"idUsuario"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UsuarioBundle\Repository\CartaoRepository")
  */
 class Cartao
 {
@@ -53,7 +53,6 @@ class Cartao
      * @var \Usuario
      *
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\OneToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idUsuario", referencedColumnName="idUsuario")
