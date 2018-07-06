@@ -17,16 +17,31 @@ use UsuarioBundle\Repository\UsuarioRepository;
 
 class LoginController extends Controller
 {
+    /**
+     * @Route("/login/{warning}", name="login")
+     */
+    public function loginAction($warning=null)
+    {
+        if($warning==1)
+        {
+            $warning = "Não foi Possível encontrar Usuario para essa combinação de login/senha";
+        }
+        return $this->render('@Usuario/Default/login.html.twig',array('warning' => $warning));
+    }
 
 
     /**
-     * @Route("/efetuar-login", name="efetuar_login")
+     * @Route("/inicio", name="inicio")
      */
-    public function homepageAction(Request $request)
+    public function efetuarLoginAction(Request $request)
     {
 
-        $login=$request->request->get('login');
-        $senha=$request->request->get('senha');
+        //$request;
+
+        $login = $_POST['login'];
+        $senha = $_POST['senha'];
+        //$login=$request->request->get('login');
+        //$senha=$request->request->get('senha');
 
         /* @var UsuarioRepository
          */
@@ -36,12 +51,24 @@ class LoginController extends Controller
          */
         $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
 
-        $Login=null;
+        
 
         $Login = $LoginRepositorio->buscaLogin($login,$senha);
 
+         //var_dump($log);exit;
+        
 
-        return $this->render('@Usuario/Default/homepage.html.twig');
+        if(count($Login)!=0)
+        {
+            return $this->render('@Usuario/Default/homepage.html.twig');
+        }
+        else
+        {
+            
+
+            return $this->redirectToRoute('login', array('warning' => 1));
+            //return $this->render('@Usuario/Default/login.html.twig',array('warning'=>$warning));
+        }
 
 /*
         if($Login)
@@ -57,20 +84,9 @@ class LoginController extends Controller
 
             return new JsonResponse(array(),500);
         }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
+    
 
 
 
