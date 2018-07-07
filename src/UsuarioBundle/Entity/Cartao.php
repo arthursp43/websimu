@@ -31,6 +31,13 @@ class Cartao
     /**
      * @var string
      *
+     * @ORM\Column(name="titular", type="string", length=45, nullable=false)
+     */
+    private $titular;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="tipo", type="string", length=45, nullable=false)
      */
     private $tipo;
@@ -67,6 +74,26 @@ class Cartao
     {
         return $this->numerocartao;
     }
+
+    /**
+     * @return string
+     */
+    public function getTitular()
+    {
+        return $this->titular;
+    }
+
+    /**
+     * @param string $titular
+     * @return Cartao
+     */
+    public function setTitular($titular)
+    {
+        $this->titular = $titular;
+        return $this;
+    }
+
+
 
     /**
      * @param string $numerocartao

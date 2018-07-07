@@ -7,9 +7,18 @@
         <tr>
             <td style="vertical-align: top;">
                 <ul class="list-group">
-                    <li class="list-group-item active"><a href="" style="color: #FFFFFF">Minha Conta</a></li>
-                    <li class="list-group-item"><a href="">Efetuar Recarga</a></li>
-                    <li class="list-group-item"><a href="">Configurações</a></li>
+                    <li class="list-group-item active"><form action="{{ path('inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Minha Conta</button></form></li>
+                    <li class="list-group-item"><form action="{{ path('recarga_inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Efetuar Recarga</button></form></li>
+                    <li class="list-group-item"><form action="{{ path('configuracao_inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Configuração</button></form></li>
                 </ul>
             </td>
             <td style="vertical-align: top;">
@@ -30,12 +39,21 @@
 
             <td style="vertical-align: top;">
                 <div class="card">
-                    <h5 class="card-header">Meus Cartões<a style="margin-left: 95px;" href="#" class="btn btn-primary">Novo Cartão</a></h5>
+                    <h5 class="card-header" style="height: 63px;width: 373px;">Meus Cartões</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"><form action="{{ path('cartao_novo') }}" method="post">
+                                    <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                                    <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                                    <button type="submit"   class="btn btn-primary">Novo Cartão</button></form></h4>
+
+                        </div>
+                    </div>
                     {% for cartao in cartoes %}
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Cartão: {{ cartao.numeroCartao }}</h4>
-                            <h5 class="card-title">Titular: {{ cartao.idusuario.nome }}</h5>
+                            <h5 class="card-title">Titular: {{ cartao.titular }}</h5>
                             <p class="card-text">Validade: {{ cartao.validade }}</p>
                             <p class="card-text">Status: {{ cartao.status }}</p>
                             <p class="card-text"><a href="">Ver Saldo</a></p>
@@ -44,6 +62,21 @@
                     </div>
                     {% endfor %}
                     
+                </div>
+            </td>
+            <td style="vertical-align: top;">
+                <div class="card">
+                    <h5 class="card-header" style="height: 63px;width: 373px;">Notificações</h5>
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <p class="card-text">Parece que você não possui nenhuma notificação</p>
+
+                            </div>
+                        </div>
+
+
                 </div>
             </td>
         </tr>

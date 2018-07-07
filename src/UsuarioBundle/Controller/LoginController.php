@@ -37,11 +37,18 @@ class LoginController extends Controller
     {
 
         //$request;
-
-        $login = $_POST['login'];
-        $senha = $_POST['senha'];
-        //$login=$request->request->get('login');
-        //$senha=$request->request->get('senha');
+        if(isset($_POST['login'])) {
+            $login = $_POST['login'];
+        }
+        else{
+            $login = $_COOKIE['login'];
+        }
+        if(isset($_POST['senha'])) {
+            $senha = $_POST['senha'];
+        }
+        else{
+            $senha = $_COOKIE['senha'];
+        }
 
         /* @var UsuarioRepository
          */
@@ -60,13 +67,18 @@ class LoginController extends Controller
         $Login = $LoginRepositorio->buscaLogin($login,$senha);
 
          //var_dump($log);exit;
-        
+
 
         if(count($Login)!=0)
         {
             //$usuario = "a";
             $cartoes = $CartaoRepository->findAll();
             $usuario = $UsuarioRepository->buscaUsuario($Login);
+
+            setcookie('login', $login);
+            setcookie('senha', $senha);
+            setcookie('usuario', $usuario->getIdusuario()."");
+
             return $this->render('@Usuario/Default/homepage.html.twig',array(
                 'usuario'=>$usuario,
                 'cartoes'=>$cartoes

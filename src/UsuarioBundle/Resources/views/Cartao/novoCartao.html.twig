@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table>
+
+        <tr>
+            <td style="vertical-align: top;">
+                <ul class="list-group">
+                    <li class="list-group-item active"><form action="{{ path('inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Minha Conta</button></form></li>
+                    <li class="list-group-item"><form action="{{ path('recarga_inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Efetuar Recarga</button></form></li>
+                    <li class="list-group-item"><form action="{{ path('configuracao_inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Configuração</button></form></li>
+                </ul>
+            </td>
+            <td style="vertical-align: top;width: 373px;">
+
+
+            </td>
+
+            <td style="vertical-align: top;">
+                <div class="card"><br><br>
+                    <h5 class="card-header" style="width: 373px;">Novo Cartão</h5>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <form method="post" action="{{ path('cartao_registrar') }}">
+                            <h4 class="card-title">Titular:<input type="text" class="form-control" id="titular" name="titular" aria-describedby="emailHelp" placeholder="Nome do Titular" required> </h4>
+                            <h5 class="card-title">Validade:<input type="text" class="form-control" id="validade" name="validade" aria-describedby="emailHelp" placeholder="XX/XX/XXXX" required> </h5>
+                            <h5 class="card-title">Tipo:<select class="form-control" id="tipo" name="tipo"  ><option value="VALE TRANSPORTE">Vale Transporte</option></select> </h5>
+
+                                <h5 class="card-title">
+                                        <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                                        <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                                        <button type="submit" class="btn btn-primary">Cadastrar Cartão</button></h5>
+                            </form>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </td>
+            <td style="vertical-align: top;">
+
+            </td>
+        </tr>
+    </table>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+        '@UsuarioBundle/Resources/public/js/Cartao/registroCartao.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+
+    {% endjavascripts %}
+{% endblock %}
