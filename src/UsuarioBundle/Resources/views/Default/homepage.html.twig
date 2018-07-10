@@ -50,16 +50,31 @@
                         </div>
                     </div>
                     {% for cartao in cartoes %}
+                        {% if cartao.status != "Cancelado" %}
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Cartão: {{ cartao.numeroCartao }}</h4>
                             <h5 class="card-title">Titular: {{ cartao.titular }}</h5>
                             <p class="card-text">Validade: {{ cartao.validade }}</p>
                             <p class="card-text">Status: {{ cartao.status }}</p>
-                            <p class="card-text"><a href="">Chegou!</a>        <a href="" style="padding-left: 150px;">Cancelar Cartão</a></p>
+
+                            {% if cartao.status == "Solicitado - Aguardando Envio" %}
+                            <p class="card-text"><a href="{{ path('cartao_chegou',{'id': cartao.numeroCartao}) }}">Chegou!</a>        <a href="{{ path('cartao_cancelar',{'id': cartao.numeroCartao}) }}" style="padding-left: 150px;">Cancelar Cartão</a></p>
+                            {% endif %}
+
+                            {% if cartao.status == "Ativo" %}
+                                <p class="card-text"><a href="{{ path('cartao_chegou',{'id': cartao.numeroCartao}) }}">Ver Saldo!</a>        <a href="{{ path('cartao_bloquear',{'id': cartao.numeroCartao}) }}" style="padding-left: 150px;">Bloquear Cartão</a></p>
+                            {% endif %}
+
+                            {% if cartao.status == "Inativo" %}
+                                <p class="card-text"><a href="{{ path('cartao_chegou',{'id': cartao.numeroCartao}) }}">Ativar Cartão!</a>        <a href="{{ path('cartao_cancelar',{'id': cartao.numeroCartao}) }}" style="padding-left: 150px;">Cancelar Cartão</a></p>
+                            {% endif %}
+
+
 
                         </div>
                     </div>
+                        {% endif %}
                     {% endfor %}
                     
                 </div>

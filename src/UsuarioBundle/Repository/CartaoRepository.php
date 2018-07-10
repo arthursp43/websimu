@@ -10,4 +10,24 @@ namespace UsuarioBundle\Repository;
  */
 class CartaoRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function buscaCartoes($usuario)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT c FROM UsuarioBundle:Cartao c where c.idusuario = :usuario "
+            )->setParameter('usuario',$usuario)
+            ->getResult();
+    }
+
+    public function buscaCartao($numeroCartao)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT c FROM UsuarioBundle:Cartao c where c.numerocartao = :numeroCartao "
+            )->setParameter('numeroCartao',$numeroCartao)
+            ->getSingleResult();
+    }
 }

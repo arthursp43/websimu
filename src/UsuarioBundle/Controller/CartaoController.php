@@ -134,6 +134,73 @@ class CartaoController extends Controller
 
     }
 
+
+    /**
+     * @Route("/cartao/chegou/{id}", name="cartao_chegou")
+     */
+    public function chegouCartaoAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        /* @var CartaoRepository
+         */
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+
+        $cartao = $CartaoRepository->buscaCartao($id);
+
+        $cartao->setStatus('Ativo');
+
+        $em->persist($cartao);
+        $em->flush();
+
+        return $this->redirectToRoute('inicio' );
+
+    }
+
+    /**
+     * @Route("/cartao/cancelar/{id}", name="cartao_cancelar")
+     */
+    public function cancelarCartaoAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        /* @var CartaoRepository
+         */
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+
+        $cartao = $CartaoRepository->buscaCartao($id);
+
+        $cartao->setStatus('Cancelado');
+
+        $em->persist($cartao);
+        $em->flush();
+
+        return $this->redirectToRoute('inicio' );
+
+    }
+
+    /**
+     * @Route("/cartao/bloquear/{id}", name="cartao_bloquear")
+     */
+    public function bloquearCartaoAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        /* @var CartaoRepository
+         */
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+
+        $cartao = $CartaoRepository->buscaCartao($id);
+
+        $cartao->setStatus('Inativo');
+
+        $em->persist($cartao);
+        $em->flush();
+
+        return $this->redirectToRoute('inicio' );
+
+    }
+
     
 
 

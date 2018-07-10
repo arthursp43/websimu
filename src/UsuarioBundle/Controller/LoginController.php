@@ -72,8 +72,9 @@ class LoginController extends Controller
         if(count($Login)!=0)
         {
             //$usuario = "a";
-            $cartoes = $CartaoRepository->findAll();
+
             $usuario = $UsuarioRepository->buscaUsuario($Login);
+            $cartoes = $CartaoRepository->buscaCartoes($usuario);
 
             setcookie('login', $login);
             setcookie('senha', $senha);
