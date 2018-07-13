@@ -172,20 +172,70 @@ class LoginController extends Controller
             $em->flush();
             return new JsonResponse(array(),200);
 
+    }
+
+    /**
+     * @Route("/salvar-informacao", name="salvar_informacao")
+     *
+     */
+    public function salvarInformacaoAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
 
 
 
+        $id = $request->request->get('id');
+
+        $usuario = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario')->find($id);
+
+        $nome = $request->request->get('nome');
+        $sobrenome = $request->request->get('sobrenome');
+        $dtnascimento = $request->request->get('dtnascimento');
+        $sexo = $request->request->get('sexo');
+        $cpf = $request->request->get('cpf');
+        $celular = $request->request->get('celular');
+        $telefone = $request->request->get('telefone');
+        $nomePai = $request->request->get('nomePai');
+        $email = $request->request->get('email');
+        $cep = $request->request->get('cep');
+        $complemento = $request->request->get('complemento');
+
+        //var_dump($cep);exit;
 
 
+        $usuario->setNome($nome);
+        $usuario->setSobrenome($sobrenome);
+        $usuario->setDtnascimento($dtnascimento);
+        $usuario->setSexo($sexo);
+        $usuario->setCpf($cpf);
+        $usuario->setCelular($celular);
+        $usuario->setTelefone($telefone);
+        $usuario->setNomepai($nomePai);
+        $usuario->setEmail($email);
+
+        $endereco = $this->getDoctrine()->getRepository('UsuarioBundle:Endereco')->find($cep);
+
+        $usuario->setCep($endereco);
+        $usuario->setComplemento($complemento);
 
 
+        //var_dump($usuario);exit;
+        $em->persist($usuario);
+        $em->flush();
+        return new JsonResponse(array(),200);
 
+    }
 
-        //} catch (\Exception $e) {
+    /**
+     * @Route("/editar-informacao", name="editar_informacao")
+     *
+     */
+    public function registrarAction()
+    {
+        $id = $_POST['usuario'];
 
+        $usuario = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario')->find($id);
 
-
-
-
+        return $this->render('@Usuario/Default/editarInformacao.html.twig',array('usuario'=>$usuario));
     }
 }

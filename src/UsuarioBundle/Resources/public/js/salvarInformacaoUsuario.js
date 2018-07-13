@@ -84,13 +84,13 @@ Cadastro = {
     executarEnvio : function (dadosFormulario) {
         console.log("ate aqui");
         $.ajax({
-            url: 'http://127.0.0.1:8000/novo-usuario',
+            url: 'http://127.0.0.1:8000/salvar-informacao',
             type: "post",
             cache: false,
             blockUI: true,
             data: dadosFormulario,
             success: function(response) {
-                location.href='http://127.0.0.1:8000/login';
+                location.href='http://127.0.0.1:8000/inicio';
             }
         });
     },

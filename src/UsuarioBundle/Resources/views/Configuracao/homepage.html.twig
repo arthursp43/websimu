@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table>
+
+        <tr>
+            <td style="vertical-align: top;">
+                <ul class="list-group">
+                    <li class="list-group-item "><form action="{{ path('inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Minha Conta</button></form></li>
+                    <li class="list-group-item"><form action="{{ path('recarga_inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Efetuar Recarga</button></form></li>
+                    <li class="list-group-item active"><form action="{{ path('configuracao_inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Configuração</button></form></li>
+                </ul>
+            </td>
+            <td style="vertical-align: top;">
+                <div class="card">
+                    <h5 class="card-header" style="height: 63px;width: 373px;">Configuração de Login</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <form method="post" action="{{ path('login_alterar') }}">
+                                <input type="hidden" id="idlogin" name="idlogin" value="{{ usuario.idlogin.id }}">
+                                <h4 class="card-title">Login Antigo:<input type="text" class="form-control" id="loginvelho" name="loginvelho" aria-describedby="emailHelp"  required> </h4>
+                                <h5 class="card-title">Novo Login:<input type="text" class="form-control" id="novologin" name="novologin" aria-describedby="emailHelp"  required> </h5>
+                                <h5 class="card-title">Confirmar Nova Login:<input type="text" class="form-control" id="cnovologin" name="cnovologin" aria-describedby="emailHelp"  required> </h5>
+
+                                <h5 class="card-title">
+                                    <input type="hidden" id="login" name="login" value="">
+                                    <input type="hidden" id="senha" name="senha" value="">
+                                    <button type="submit" class="btn btn-primary">Alterar Login</button></h5>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+            <td style="vertical-align: top;">
+                <div class="card">
+                    <h5 class="card-header" style="height: 63px;width: 373px;">Configuração de Senha</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <form method="post">
+                                <input type="hidden" id="idlogin" name="idlogin" value="{{ usuario.idlogin.login }}">
+                                <h4 class="card-title">Senha Antiga:<input type="text" class="form-control" id="senhavelha" name="senhavelha" aria-describedby="emailHelp" placeholder="" required> </h4>
+                                <h5 class="card-title">Nova Senha:<input type="text" class="form-control" id="novasenha" name="novasenha" aria-describedby="emailHelp" placeholder="" required> </h5>
+                                <h5 class="card-title">Confirmar Nova Senha:<input type="text" class="form-control" id="cnovasenha" name="cnovasenha" aria-describedby="emailHelp" placeholder="" required> </h5>
+
+                                <h5 class="card-title">
+                                    <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                                    <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                                    <button type="submit" class="btn btn-primary">Alterar Senha</button></h5>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+            <td style="vertical-align: top;">
+                <div class="card">
+                    <h5 class="card-header" style="height: 63px;width: 373px;">Notificações</h5>
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <p class="card-text">Parece que você não possui nenhuma notificação</p>
+
+                            </div>
+                        </div>
+
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    {% javascripts %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+
+{% endblock %}

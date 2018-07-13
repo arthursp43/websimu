@@ -62,7 +62,7 @@ class Login
     /**
      * @return int
      */
-    public function getIdl()
+    public function getId()
     {
         return $this->id;
     }

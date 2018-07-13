@@ -21,6 +21,7 @@
                             <button style="width: 136px;"type="submit" class="btn btn-primary">Configuração</button></form></li>
                 </ul>
             </td>
+
             <td style="vertical-align: top;">
                 <div class="card">
                     <h5 class="card-header" style="height: 63px;">Minhas Informações</h5>
@@ -31,7 +32,7 @@
                         <p class="card-text">CPF: {{ usuario.cpf }}</p>
                         <p class="card-text">CEP: {{ usuario.cep.cep }}</p>
                         <p class="card-text">Celular: {{ usuario.celular }} Telefone: {{ usuario.telefone }} </p>
-                        <a href="#" class="btn btn-primary">Editar Informações</a>
+                        <form method="post" action="{{ path('editar_informacao') }}"><input type="hidden" id="usuario" name="usuario" value="{{ usuario.idusuario }}"><button class="btn btn-primary">Editar Informações</button></form>
                     </div>
                 </div>
 

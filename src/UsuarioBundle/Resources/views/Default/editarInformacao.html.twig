@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br><br>
+    <div class="row">
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4">
+            <form>
+                <div class="form-group">
+                    <input type="hidden" name="id" id="id" value="{{ usuario.idusuario }}">
+                    <label for="exampleInputEmail1">Nome:</label>
+                    <input type="text" class="form-control" id="nome"  placeholder="Nome" value="{{ usuario.nome }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sobrenome:</label>
+                    <input type="text" class="form-control" id="sobrenome"  placeholder="Sobreome" value="{{ usuario.sobrenome }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Data Nascimento:</label>
+                    <input type="text" class="form-control" id="dtnascimento"  placeholder="XX/XX/XXXX" value="{{ usuario.dtnascimento }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sexo:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sexo" id="sexo" value="M" {% if usuario.sexo=='M' %}checked="checked"{% endif %}>
+                        <label class="form-check-label" for="inlineRadio1">Masculino</label>
+
+                        <input class="form-check-input" type="radio" name="sexo" id="sexo1" value="F" {% if usuario.sexo=='F' %}checked="checked"{% endif %}>
+                        <label class="form-check-label" for="inlineRadio2">Feminino</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">CPF:</label>
+                    <input type="text" class="form-control" id="cpf" aria-describedby="emailHelp" placeholder="XXX.XXX.XXX-XX" value="{{ usuario.cpf }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Celular:</label>
+                    <input type="text" class="form-control" id="celular" aria-describedby="emailHelp" placeholder="(XX) XXXXX-XXXX" value="{{ usuario.celular }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Telefone:</label>
+                    <input type="text" class="form-control" id="telefone" aria-describedby="emailHelp" placeholder="(XX) XXXX-XXXX" value="{{ usuario.telefone }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nome do Pai:</label>
+                    <input type="text" class="form-control" id="nomePai" aria-describedby="emailHelp" placeholder="Nome do Pai" value="{{ usuario.nomepai }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email:</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" value="{{ usuario.email }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">CEP:</label>
+                    <input type="text" name="cep" class="form-control" id="cep" aria-describedby="emailHelp" placeholder="XXXXX-XXX" value="{{ usuario.cep.cep }}">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Complemento:</label>
+                    <input type="text" class="form-control" id="complemento" aria-describedby="emailHelp" placeholder="Número" value="{{ usuario.complemento }}">
+
+                </div>
+
+
+
+
+                <button type="button" id="btn-salvar" name="btn-salvar" class="btn btn-primary btn-lg" role="button">Salvar Alterações</button>
+
+
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+        '@UsuarioBundle/Resources/public/js/salvarInformacaoUsuario.js'
+        '@UsuarioBundle/Resources/public/js/bootbox.min.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+
+    {% endjavascripts %}
+{% endblock %}
+
+
+
+
