@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table>
+
+        <tr>
+            <td style="vertical-align: top;">
+                <ul class="list-group">
+                    <li class="list-group-item "><form action="{{ path('inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Minha Conta</button></form></li>
+                    <li class="list-group-item active" ><form action="{{ path('recarga_inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Efetuar Recarga</button></form></li>
+                    <li class="list-group-item "><form action="{{ path('configuracao_inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Configuração</button></form></li>
+                </ul>
+            </td>
+            <td style="vertical-align: top;">
+                <div class="card">
+                    <h5 class="card-header" style="height: 63px;width: 373px;"></h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"><form action="{{ path('cartao_novo') }}" method="post">
+                                   <select>
+                                       <option>Selecione um cartão</option>
+                                   </select>
+                                   
+                                    <button type="submit"   class="btn btn-primary">Recarga para Meus cartões</button></form></h4>
+                            <h4 class="card-title"><form action="{{ path('cartao_novo') }}" method="post">
+                                    <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                                    <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                                    <button type="submit"   class="btn btn-primary">Recarga para cartões de terceiros</button></form></h4>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+            <td style="vertical-align: top;">
+                <div class="card">
+                    <h5 class="card-header" style="height: 63px;width: 373px;">Seus Pedidos</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Parece que você não possui nenhum Pedido ainda!</p>
+                            <p class="card-text">Tá esperando o que?</p>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+            <td style="vertical-align: top;">
+                <div class="card">
+                    <h5 class="card-header" style="height: 63px;width: 373px;">Notificações</h5>
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <p class="card-text">Parece que você não possui nenhuma notificação</p>
+
+                            </div>
+                        </div>
+
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+        '@UsuarioBundle/Resources/public/js/Configuracao/configuracao.js'
+        '@UsuarioBundle/Resources/public/js/bootbox.min.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+
+    {% endjavascripts %}
+{% endblock %}
