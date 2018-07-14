@@ -24,11 +24,21 @@ class ConfiguracaoController extends Controller
     }
 
     /**
-     * @Route("/configuracao/inicio", name="configuracao_inicio")
+     * @Route("/configuracao/inicio/{warning}",defaults={"warning"=null}, name="configuracao_inicio")
      */
-    public function configuracaoInicioAction()
+    public function configuracaoInicioAction($warning)
     {
+        $txtwarninglogin="";
+        $txtwarningsenha="";
 
+        if($warning=="login")
+        {
+            $txtwarninglogin = 'Combinação inválida';
+        }
+        if($warning=="senha")
+        {
+            $txtwarningsenha = 'Combinação inválida';
+        }
 
         //$request;
         if(isset($_POST['login'])) {
@@ -75,7 +85,9 @@ class ConfiguracaoController extends Controller
             setcookie('usuario', $usuario->getIdusuario()."");
 
             return $this->render('@Usuario/Configuracao/homepage.html.twig',array(
-                'usuario'=>$usuario
+                'usuario'=>$usuario,
+                'warninglogin'=>$txtwarninglogin,
+                'warningsenha'=>$txtwarningsenha
             ));
         }
         else
@@ -119,14 +131,44 @@ class ConfiguracaoController extends Controller
         }else
         {
 
-            $warning = 'Login atual e/ou confirmacao de Login inválida';
-            return $this->render('@Usuario/Configuracao/homepage.html.twig',array('warning' => $warning));
+
+            $warning = "senha";
+            return $this->redirectToRoute('configuracao_inicio',array('warning'=>$warning));
         }
+    }
 
+    /**
+     * @Route("/configuracao/senha/alterar", name="senha_alterar")
+     */
+    public function alterarSenha()
+    {
+        $id         = $_POST['idlogin'];
+        $senhavelha = $_POST['senhavelha'];
+        $novasenha  = $_POST['novasenha'];
+        $cnovasenha = $_POST['cnovasenha'];
 
+        /* @var UsuarioRepository
+         */
+        $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
 
+        $login = $LoginRepositorio->find($id);
 
+        if(($login->getSenha() == $senhavelha) and ($novasenha==$cnovasenha))
+        {
 
+            $login->setSenha($novasenha);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($login);
+            $em->flush();
+            return $this->render('@Usuario/Default/login.html.twig');
+
+        }else
+        {
+
+            $warning = "senha";
+            return $this->redirectToRoute('configuracao_inicio',array('warning'=>$warning));
+        }
     }
 
     

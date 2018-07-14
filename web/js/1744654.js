@@ -2,105 +2,79 @@
 
 $(document).ready(function() {
     setTimeout(function(){
-        Cadastro.iniciar();
+        $("#chegou").click(function () {
+        var id =$(this).attr("data-id");
+            bootbox.confirm({
+                message: "Confirmar chegada do cartão número: "+id,
+                callback: function(result){
+                    if(result)
+                    {
+
+                        bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
+                        location.href='http://127.0.0.1:8000/cartao/chegou/'+id;
+                    }
+
+                }
+            })
+
+
+        });
+
+
+        $("#bloquear").click(function () {
+            var id =$(this).attr("data-id");
+            bootbox.confirm({
+                message: "Confirmar Bloqueio cartão número: "+id,
+                callback: function(result){
+                    if(result)
+                    {
+                        bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
+                        location.href='http://127.0.0.1:8000/cartao/bloquear/'+id;
+                    }
+
+                }
+            })
+
+
+        });
+
+        $("#cancelar").click(function () {
+            var id =$(this).attr("data-id");
+            bootbox.confirm({
+                message: "Confirmar Cancelamento do cartão número: "+id,
+                callback: function(result){
+                    if(result)
+                    {
+                        bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
+                        location.href='http://127.0.0.1:8000/cartao/cancelar/'+id;
+                    }
+
+                }
+            })
+
+
+        });
+
+        $("#ativar").click(function () {
+            var id =$(this).attr("data-id");
+            bootbox.confirm({
+                message: "Confirmar Ativação do cartão número: "+id,
+                callback: function(result){
+                    if(result)
+                    {
+                        bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
+                        location.href='http://127.0.0.1:8000/cartao/chegou/'+id;
+                    }
+
+                }
+            })
+
+
+        });
     },100);
 });
 
-Cadastro = {
-    $formulario: null,
-    dados: {},
-    campos: [],
-    dataConclusaoDatePicker: null,
 
-    //PRIVADOS------------------------------------------------------------------------------------------------//
-
-    iniciarCampos: function() {
-        var myself = this;
-
-
-        myself.campos.id = $("#id");
-        myself.campos.nome = $("#nome");
-        myself.campos.sobrenome = $("#sobrenome");
-        myself.campos.dtnascimento = $("#dtnascimento");
-        myself.campos.sexo = $("#sexo");
-        myself.campos.cpf = $("#cpf");
-        myself.campos.celular = $("#celular");
-        myself.campos.telefone = $("#telefone");
-        myself.campos.nomePai = $("#nomePai");
-        myself.campos.email = $("#email");
-        myself.campos.cep = $("#cep");
-        myself.campos.complemento = $("#complemento");
-        myself.campos.login = $("#login");
-        myself.campos.senha = $("#senha");
-
-
-        myself.campos.botaoSalvar = $("#btn-salvar");
-
-
-
-        myself.aplicarMascarasNosCampos();
-    },
-
-    aplicarMascarasNosCampos: function() {
-        var myself = this;
-
-
-        myself.campos.botaoSalvar.click(function(){
-            
-                    myself.recolherDadosFormularioEEnviar();
-
-
-        });
-
-    },
-
-    recolherDadosFormularioEEnviar: function() {
-        var dadosFormulario = {};
-        var myself = this;
-
-
-
-        dadosFormulario['id'] =myself.campos.id.val();
-        dadosFormulario['nome'] =myself.campos.nome.val();
-        dadosFormulario['sobrenome'] =myself.campos.sobrenome.val();
-        dadosFormulario['dtnascimento'] =myself.campos.dtnascimento.val();
-        dadosFormulario['sexo'] =myself.campos.sexo.val();
-        dadosFormulario['cpf'] =myself.campos.cpf.val();
-        dadosFormulario['celular'] =myself.campos.celular.val();
-        dadosFormulario['telefone'] =myself.campos.telefone.val();
-        dadosFormulario['nomePai'] =myself.campos.nomePai.val();
-        dadosFormulario['email'] =myself.campos.email.val();
-        dadosFormulario['cep'] =myself.campos.cep.val();
-        dadosFormulario['complemento'] =myself.campos.complemento.val();
-        dadosFormulario['login'] =myself.campos.login.val();
-        dadosFormulario['senha'] =myself.campos.senha.val();
-
-
-
-        myself.executarEnvio(dadosFormulario);
-    },
-
-
-    executarEnvio : function (dadosFormulario) {
-        console.log("ate aqui");
-        $.ajax({
-            url: 'http://127.0.0.1:8000/novo-usuario',
-            type: "post",
-            cache: false,
-            blockUI: true,
-            data: dadosFormulario,
-            success: function(response) {
-                location.href='http://127.0.0.1:8000/login';
-            }
-        });
-    },
-
-    //PUBLICOS------------------------------------------------------------------------------------------------//
-
-    iniciar: function() {
-        this.iniciarCampos();
-    }
-};
 /**
  * bootbox.js v4.4.0
  *

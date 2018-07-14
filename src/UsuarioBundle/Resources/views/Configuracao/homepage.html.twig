@@ -26,8 +26,11 @@
                     <h5 class="card-header" style="height: 63px;width: 373px;">Configuração de Login</h5>
                     <div class="card">
                         <div class="card-body">
-                            <form method="post" action="{{ path('login_alterar') }}">
-                                <input type="hidden" id="idlogin" name="idlogin" value="{{ usuario.idlogin.id }}">
+                            <form method="post" name="formlogin" id="formlogin" action="{{ path('login_alterar') }}">
+                                <input  type="hidden" id="idlogin" name="idlogin" value="{{ usuario.idlogin.id }}">
+                                <h7><font color="red">{% if warninglogin %}
+                                        {{ warninglogin|default("") }}
+                                        {% endif %}</font></h7>
                                 <h4 class="card-title">Login Antigo:<input type="text" class="form-control" id="loginvelho" name="loginvelho" aria-describedby="emailHelp"  required> </h4>
                                 <h5 class="card-title">Novo Login:<input type="text" class="form-control" id="novologin" name="novologin" aria-describedby="emailHelp"  required> </h5>
                                 <h5 class="card-title">Confirmar Nova Login:<input type="text" class="form-control" id="cnovologin" name="cnovologin" aria-describedby="emailHelp"  required> </h5>
@@ -35,7 +38,7 @@
                                 <h5 class="card-title">
                                     <input type="hidden" id="login" name="login" value="">
                                     <input type="hidden" id="senha" name="senha" value="">
-                                    <button type="submit" class="btn btn-primary">Alterar Login</button></h5>
+                                    <button name="btlogin" id="btlogin" type="button" class="btn btn-primary">Alterar Login</button></h5>
                             </form>
                         </div>
                     </div>
@@ -48,16 +51,19 @@
                     <h5 class="card-header" style="height: 63px;width: 373px;">Configuração de Senha</h5>
                     <div class="card">
                         <div class="card-body">
-                            <form method="post">
-                                <input type="hidden" id="idlogin" name="idlogin" value="{{ usuario.idlogin.login }}">
-                                <h4 class="card-title">Senha Antiga:<input type="text" class="form-control" id="senhavelha" name="senhavelha" aria-describedby="emailHelp" placeholder="" required> </h4>
-                                <h5 class="card-title">Nova Senha:<input type="text" class="form-control" id="novasenha" name="novasenha" aria-describedby="emailHelp" placeholder="" required> </h5>
-                                <h5 class="card-title">Confirmar Nova Senha:<input type="text" class="form-control" id="cnovasenha" name="cnovasenha" aria-describedby="emailHelp" placeholder="" required> </h5>
+                            <form name="formsenha" id="formsenha" method="post" action="{{ path('senha_alterar') }}">
+                                <input type="hidden" id="idlogin" name="idlogin" value="{{ usuario.idlogin.id }}">
+                                <h7><font color="red">{% if warningsenha %}
+                                            {{ warningsenha|default("") }}
+                                        {% endif %}</font></h7>
+                                <h4 class="card-title">Senha Antiga:<input type="password" class="form-control" id="senhavelha" name="senhavelha" aria-describedby="emailHelp" placeholder="" required> </h4>
+                                <h5 class="card-title">Nova Senha:<input type="password" class="form-control" id="novasenha" name="novasenha" aria-describedby="emailHelp" placeholder="" required> </h5>
+                                <h5 class="card-title">Confirmar Nova Senha:<input type="password" class="form-control" id="cnovasenha" name="cnovasenha" aria-describedby="emailHelp" placeholder="" required> </h5>
 
                                 <h5 class="card-title">
                                     <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
                                     <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
-                                    <button type="submit" class="btn btn-primary">Alterar Senha</button></h5>
+                                    <button name="btnsenha" id="btnsenha" type="button" class="btn btn-primary">Alterar Senha</button></h5>
                             </form>
                         </div>
                     </div>
@@ -83,10 +89,14 @@
     </table>
 
 
-    {% javascripts %}
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+        '@UsuarioBundle/Resources/public/js/Configuracao/configuracao.js'
+        '@UsuarioBundle/Resources/public/js/bootbox.min.js'
+    %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
+
     {% endjavascripts %}
-
-
-
 {% endblock %}

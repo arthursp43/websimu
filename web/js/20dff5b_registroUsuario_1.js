@@ -18,7 +18,7 @@ Cadastro = {
         var myself = this;
 
 
-
+        myself.campos.id = $("#id");
         myself.campos.nome = $("#nome");
         myself.campos.sobrenome = $("#sobrenome");
         myself.campos.dtnascimento = $("#dtnascimento");
@@ -60,7 +60,7 @@ Cadastro = {
 
 
 
-
+        dadosFormulario['id'] =myself.campos.id.val();
         dadosFormulario['nome'] =myself.campos.nome.val();
         dadosFormulario['sobrenome'] =myself.campos.sobrenome.val();
         dadosFormulario['dtnascimento'] =myself.campos.dtnascimento.val();

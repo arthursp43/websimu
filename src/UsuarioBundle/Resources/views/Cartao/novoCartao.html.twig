@@ -32,7 +32,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <form method="post" action="{{ path('cartao_registrar') }}">
+                            <form name="form1" id="form1" method="post" action="{{ path('cartao_registrar') }}">
                             <h4 class="card-title">Titular:<input type="text" class="form-control" id="titular" name="titular" aria-describedby="emailHelp" placeholder="Nome do Titular" required> </h4>
                             <h5 class="card-title">Validade:<input type="text" class="form-control" id="validade" name="validade" aria-describedby="emailHelp" placeholder="XX/XX/XXXX" required> </h5>
                             <h5 class="card-title">Tipo:<select class="form-control" id="tipo" name="tipo"  ><option value="VALE TRANSPORTE">Vale Transporte</option></select> </h5>
@@ -40,9 +40,10 @@
                                 <h5 class="card-title">
                                         <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
                                         <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
-                                        <button type="submit" class="btn btn-primary">Cadastrar Cartão</button></h5>
+                                        <button type="button" name="enviar" id="enviar" class="btn btn-primary">Cadastrar Cartão</button></h5>
                             </form>
                         </div>
+
                     </div>
 
                     
@@ -59,6 +60,7 @@
 
 {% block javascripts %}
     {% javascripts
+        '@UsuarioBundle/Resources/public/js/bootbox.min.js'
         '@UsuarioBundle/Resources/public/js/Cartao/registroCartao.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>

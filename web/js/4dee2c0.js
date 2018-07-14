@@ -83,16 +83,27 @@ Cadastro = {
 
     executarEnvio : function (dadosFormulario) {
         console.log("ate aqui");
-        $.ajax({
-            url: 'http://127.0.0.1:8000/novo-usuario',
-            type: "post",
-            cache: false,
-            blockUI: true,
-            data: dadosFormulario,
-            success: function(response) {
-                location.href='http://127.0.0.1:8000/login';
+        bootbox.confirm({
+            message: "Confirma as alterações nas suas informações?",
+            callback: function(result){
+                if(result)
+                {
+                    bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
+                    $.ajax({
+                        url: 'http://127.0.0.1:8000/salvar-informacao',
+                        type: "post",
+                        cache: false,
+                        blockUI: true,
+                        data: dadosFormulario,
+                        success: function(response) {
+                            location.href='http://127.0.0.1:8000/inicio';
+                        }
+                    });
+                }
+
             }
-        });
+        })
+
     },
 
     //PUBLICOS------------------------------------------------------------------------------------------------//
