@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Pedido
  *
  * @ORM\Table(name="pedido", indexes={@ORM\Index(name="fk_Pedido_Usuario1_idx", columns={"idUsuario"}), @ORM\Index(name="fk_Pedido_Pagamento1_idx", columns={"idPagamento"}), @ORM\Index(name="fk_Pedido_Empresa1_idx", columns={"idEmpresa"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UsuarioBundle\Repository\PedidoRepository")
  */
 class Pedido
 {

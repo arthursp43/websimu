@@ -23,19 +23,24 @@
             </td>
             <td style="vertical-align: top;">
                 <div class="card">
-                    <h5 class="card-header" style="height: 63px;width: 373px;"></h5>
+                    <h5 class="card-header" style="height: 63px;width: 373px;">1º Passo</h5>
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title"><form action="{{ path('cartao_novo') }}" method="post">
-                                   <select>
-                                       <option>Selecione um cartão</option>
-                                   </select>
-                                   
-                                    <button type="submit"   class="btn btn-primary">Recarga para Meus cartões</button></form></h4>
-                            <h4 class="card-title"><form action="{{ path('cartao_novo') }}" method="post">
-                                    <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
-                                    <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
-                                    <button type="submit"   class="btn btn-primary">Recarga para cartões de terceiros</button></form></h4>
+                            <h4 class="card-title">
+                                Escolha um Cartão:
+                                <select class="form-control form-control-lg" name="cartoes" id="cartoes" required>
+                                    <option value="">Selecione um cartão</option>
+                                    {% for cartao in cartoes %}
+                                        <option value="{{ cartao.numeroCartao }}">{{ cartao.numeroCartao }}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </h4>
+                            <h4 class="card-title">Qual o valor da recarga?
+                                <input type="text" class="form-control" id="valor" name="valor" placeholder="Valor R$" required><br>
+                                <button class="btn btn-primary" id="add" name="add">Adicionar Item</button>
+                            </h4>
+
                         </div>
                     </div>
                 </div>
@@ -44,12 +49,23 @@
 
             <td style="vertical-align: top;">
                 <div class="card">
-                    <h5 class="card-header" style="height: 63px;width: 373px;">Seus Pedidos</h5>
+                    <h5 class="card-header" style="height: 63px;width: 373px;">Itens do seu carrinho!</h5>
                     <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">Parece que você não possui nenhum Pedido ainda!</p>
-                            <p class="card-text">Tá esperando o que?</p>
-                        </div>
+                        <br><br>
+                        <table id="tabelapedido" name="tabelapedido">
+
+                            <tr><td><b>Cartão</b></td><td><b>Valor</b></td><td><b>Ação</b></td></tr>
+                            {% if itenspedido %}
+
+                                {% for itenpedido in itenspedido %}
+                                    <tr><td><b>{{ itenpedido.cartaousuario }}</b></td><td><b>{{ itenpedido.valor }}</b></td><td><b>Ação</b></td></tr>
+
+                                {% endfor %}
+
+                            {% endif %}
+
+                        </table>
+
                     </div>
                 </div>
 
@@ -77,7 +93,7 @@
 
 {% block javascripts %}
     {% javascripts
-        '@UsuarioBundle/Resources/public/js/Configuracao/configuracao.js'
+        '@UsuarioBundle/Resources/public/js/Recarga/configuracao.js'
         '@UsuarioBundle/Resources/public/js/bootbox.min.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>

@@ -21,6 +21,19 @@ class CartaoRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
     }
 
+
+    public function buscaCartoesAtivos($usuario,$status)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT c FROM UsuarioBundle:Cartao c where c.idusuario = :usuario and c.status = :status "
+            )
+            ->setParameter('usuario',$usuario)
+            ->setParameter('status',$status)
+            ->getResult();
+    }
+
     public function buscaCartao($numeroCartao)
     {
 

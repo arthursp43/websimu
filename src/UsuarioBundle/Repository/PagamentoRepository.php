@@ -10,4 +10,6 @@ namespace UsuarioBundle\Repository;
  */
 class PagamentoRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Itenspedido
  *
  * @ORM\Table(name="itenspedido", indexes={@ORM\Index(name="fk_ItensPedido_Pedido1_idx", columns={"Pedido_idPedido"}), @ORM\Index(name="fk_ItensPedido_Cartao1_idx", columns={"Cartao_idUsuario", "Cartao_numeroCartao"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UsuarioBundle\Repository\ItensPedidoRepository")
  */
 class Itenspedido
 {
@@ -17,7 +17,7 @@ class Itenspedido
      *
      * @ORM\Column(name="idItensPedido", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $iditenspedido;
 
@@ -32,21 +32,18 @@ class Itenspedido
      * @var \Cartao
      *
      * @ORM\ManyToOne(targetEntity="Cartao")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Cartao_idUsuario", referencedColumnName="idUsuario"),
-     *   @ORM\JoinColumn(name="Cartao_numeroCartao", referencedColumnName="numeroCartao")
-     * })
+     *  @ORM\JoinColumn(name="Cartao_numeroCartao", referencedColumnName="numeroCartao")
+     *
      */
     private $cartaousuario;
 
+   
     /**
      * @var \Pedido
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Pedido")
+     * @ORM\ManyToOne(targetEntity="Pedido")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Pedido_idPedido", referencedColumnName="idPedido")
+     *   @ORM\JoinColumn(name="Pedido_idPedido", referencedColumnName="idEmpresa")
      * })
      */
     private $pedidopedido;

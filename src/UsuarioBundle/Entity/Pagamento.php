@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Pagamento
  *
  * @ORM\Table(name="pagamento")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UsuarioBundle\Repository\PedidoRepository")
  */
 class Pagamento
 {

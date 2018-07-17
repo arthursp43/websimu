@@ -10,4 +10,13 @@ namespace UsuarioBundle\Repository;
  */
 class PedidoRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function BuscarUltimoPagamentoUsuario($usuario)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT p FROM UsuarioBundle:Pedido p WHERE p.idpedido = (select MAX(pa.idpedido) from UsuarioBundle:Pedido pa) and p.idusuario = :usuario"
+            )->setParameter('usuario',$usuario)
+            ->getSingleResult();
+    }
 }

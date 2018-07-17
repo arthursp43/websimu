@@ -10,4 +10,14 @@ namespace UsuarioBundle\Repository;
  */
 class ItensPedidoRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function buscarItensPedidoPedido($pedido)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT p FROM UsuarioBundle:ItensPedido p WHERE p.pedidopedido = :pedido"
+            )->setParameter('pedido',$pedido)
+            ->getResult();
+    }
 }
