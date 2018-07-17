@@ -246,8 +246,10 @@ class RecargaController extends Controller
             $valor = $request->request->get('valor');
             $cartao = $request->request->get('cartao');
 
+            $card = $CartaoRepository->find($cartao);
+
             $itempedido->setValor($valor);
-            $itempedido->setCartaousuario($cartao);
+            $itempedido->setCartaousuario($card);
             $itempedido->setPedidopedido($pedido);
 
 

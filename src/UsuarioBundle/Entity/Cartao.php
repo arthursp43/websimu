@@ -59,7 +59,6 @@ class Cartao
     /**
      * @var \Usuario
      *
-     * @ORM\Id
      * @ORM\OneToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idUsuario", referencedColumnName="idUsuario")

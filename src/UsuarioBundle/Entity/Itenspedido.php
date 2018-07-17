@@ -37,13 +37,13 @@ class Itenspedido
      */
     private $cartaousuario;
 
-   
+
     /**
      * @var \Pedido
      *
      * @ORM\ManyToOne(targetEntity="Pedido")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Pedido_idPedido", referencedColumnName="idEmpresa")
+     *   @ORM\JoinColumn(name="Pedido_idPedido", referencedColumnName="idPedido")
      * })
      */
     private $pedidopedido;
