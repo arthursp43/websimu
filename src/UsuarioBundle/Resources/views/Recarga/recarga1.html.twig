@@ -27,6 +27,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">
+                                <input id="id" name="id" type="hidden" value="{{ pedido.idpedido|default("") }}">
                                 Escolha um Cartão:
                                 <select class="form-control form-control-lg" name="cartoes" id="cartoes" required>
                                     <option value="">Selecione um cartão</option>
@@ -55,14 +56,14 @@
                         <table id="tabelapedido" name="tabelapedido">
 
                             <tr><td><b>Cartão</b></td><td><b>Valor</b></td><td><b>Ação</b></td></tr>
-                            {% if itenspedido %}
 
-                                {% for itenpedido in itenspedido %}
-                                    <tr><td><b>{{ itenpedido.cartaousuario }}</b></td><td><b>{{ itenpedido.valor }}</b></td><td><b>Ação</b></td></tr>
+
+                                {% for itenpedido in itenspedido1 %}
+                                    <tr><td>{{ itenpedido.cartaousuario.numerocartao }}</td><td>{{ itenpedido.valor }}</td><td><a href="#">Remover</a></td></tr>
 
                                 {% endfor %}
 
-                            {% endif %}
+
 
                         </table>
 

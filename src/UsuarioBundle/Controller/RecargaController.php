@@ -89,9 +89,9 @@ class RecargaController extends Controller
     }
 
     /**
-     * @Route("/recarga/meus-cartoes", name="recarga_meus_cartoes")
+     * @Route("/recarga/meus-cartoes/{id}",defaults={"id"=null}, name="recarga_meus_cartoes")
      */
-    public function recargaMeusCartoesAction()
+    public function recargaMeusCartoesAction($id)
     {
 
         ///$request;
@@ -139,36 +139,44 @@ class RecargaController extends Controller
             setcookie('senha', $senha);
             setcookie('usuario', $usuario->getIdusuario()."");
 
-            $pedido = new Pedido();
-
-            $pedido->setIdusuario($usuario);
-            $pedido->setStatus("fase1");
-            $pedido->setValor(0);
-            $pedido->setDatapedido("");
-
-            $em = $this->getDoctrine()->getManager();
-
-            $em->persist($pedido);
-            $em->flush();
 
 
 
-            /* @var PedidoRepository
-             */
-            $PedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Pedido');
-            $pedido = $PedidoRepository->BuscarUltimoPagamentoUsuario($usuario);
+            if(!$id) {
 
-            /* @var ItensPedidoRepository
-             */
-            $ItensPedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Itenspedido');
-            $itenspedido = $ItensPedidoRepository->buscarItensPedidoPedido($pedido);
+                $pedido = new Pedido();
+
+                $pedido->setIdusuario($usuario);
+                $pedido->setStatus("fase1");
+                $pedido->setValor(0);
+                $pedido->setDatapedido("");
+
+                $em = $this->getDoctrine()->getManager();
+
+                $em->persist($pedido);
+                $em->flush();
+            }else {
 
 
-            return $this->render('@Usuario/Recarga/recarga1.html.twig',array(
-                'usuario'=>$usuario,
-                'cartoes'=>$cartoes,
-                'itenspedido'=>$itenspedido
-            ));
+                /* @var PedidoRepository
+                 */
+                $PedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Pedido');
+                $pedido = $PedidoRepository->find($id);
+            }
+                /* @var ItensPedidoRepository
+                 */
+                $ItensPedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Itenspedido');
+                $itenspedido1 = $ItensPedidoRepository->findBy(array('pedidopedido' => $pedido));
+
+
+
+            return $this->render('@Usuario/Recarga/recarga1.html.twig', array(
+                    'pedido'=>$pedido,
+                    'usuario' => $usuario,
+                    'cartoes' => $cartoes,
+                    'itenspedido1' => $itenspedido1
+                ));
+
         }
         else
         {
@@ -239,14 +247,17 @@ class RecargaController extends Controller
 
 
 
-            $pedido = $PedidoRepository->BuscarUltimoPagamentoUsuario($usuario);
+
 
             $itempedido = new Itenspedido();
 
+            $idpedido =$request->request->get('id');
             $valor = $request->request->get('valor');
             $cartao = $request->request->get('cartao');
 
             $card = $CartaoRepository->find($cartao);
+
+            $pedido = $PedidoRepository->find($idpedido);
 
             $itempedido->setValor($valor);
             $itempedido->setCartaousuario($card);

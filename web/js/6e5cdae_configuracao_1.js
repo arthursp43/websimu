@@ -24,6 +24,7 @@ $(document).ready(function() {
 
             dadosFormulario['cartao']= $("#cartoes").val();
             dadosFormulario['valor'] =$("#valor").val();
+            dadosFormulario['id'] =$("#id").val();
 
 
             $.ajax({
@@ -38,7 +39,7 @@ $(document).ready(function() {
                         title: "Item Pedido",
                         message: "Iten Cadastrado com Sucesso",
                         callback: function(){
-                            location.href='http://127.0.0.1:8000/registrar-item-pedido';
+                            location.href='http://127.0.0.1:8000/recarga/meus-cartoes/'+dadosFormulario['id'];
                         }
                     })
                 }
