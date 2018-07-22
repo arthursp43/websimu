@@ -57,13 +57,17 @@
 
                             <tr><td><b>Cartão</b></td><td><b>Valor</b></td><td><b>Ação</b></td></tr>
 
-
+                                {% set valortotal = 0 %}
                                 {% for itenpedido in itenspedido1 %}
-                                    <tr><td>{{ itenpedido.cartaousuario.numerocartao }}</td><td>{{ itenpedido.valor }}</td><td><a href="#">Remover</a></td></tr>
-
+                                    <tr><td>{{ itenpedido.cartaousuario.numerocartao }}</td><td>{{ itenpedido.valor }}</td><td><button class="btn btn-danger" id="excluir" name="excluir" data-id="{{ itenpedido.iditenspedido }}" >Remover</button></td></tr>
+                                    {% set valortotal=valortotal+itenpedido.valor %}
                                 {% endfor %}
 
+                            {% if itenspedido1 %}
+                            <tr><td><b>Total:</b></td><td><b> {{ valortotal }}</b></td><td><b></b></td></tr>
+                                <tr><td><b></b></td><td><b><br><button id="confirmapedido" name="confirmapedido" class="btn btn-success">Confirmar Pedido</button></b></td><td><b></b></td></tr>
 
+                            {% endif %}
 
                         </table>
 

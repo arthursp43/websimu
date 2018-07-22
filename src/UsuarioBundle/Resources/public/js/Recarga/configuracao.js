@@ -45,6 +45,55 @@ $(document).ready(function() {
                 }
             });
         });
+        $("#excluir").click(function(){
+            var dadosFormulario = {};
+
+            dadosFormulario['id'] =$("#id").val();
+            dadosFormulario['iditenspedido']=$("#excluir").data("id");
+
+            $.ajax({
+                url: 'http://127.0.0.1:8000/recarga/excluir-item-pedido',
+                type: "post",
+                cache: false,
+                blockUI: true,
+                data: dadosFormulario,
+                success: function(response) {
+                    bootbox.alert({
+                        size: "small",
+                        title: "Item Pedido",
+                        message: "Iten Removido com Sucesso",
+                        callback: function(){
+                            location.href='http://127.0.0.1:8000/recarga/meus-cartoes/'+dadosFormulario['id'];
+                        }
+                    })
+                }
+            });
+        });
+        $("#confirmapedido").click(function(){
+            var dadosFormulario = {};
+
+            dadosFormulario['id'] =$("#id").val();
+
+
+            $.ajax({
+                url: 'http://127.0.0.1:8000/recarga/encaminhar-pedido',
+                type: "post",
+                cache: false,
+                blockUI: true,
+                data: dadosFormulario,
+                success: function(response) {
+                    bootbox.alert({
+                        size: "small",
+                        title: "Pedido",
+                        message: "Pedido Confirmado com Sucesso",
+                        callback: function(){
+                            location.href='http://127.0.0.1:8000/recarga/inicio';
+                        }
+                    })
+                }
+            });
+        });
+
 
 
 

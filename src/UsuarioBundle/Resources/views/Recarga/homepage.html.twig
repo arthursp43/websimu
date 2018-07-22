@@ -45,8 +45,24 @@
                     <h5 class="card-header" style="height: 63px;width: 373px;">Seus Pedidos</h5>
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-text">Parece que você não possui nenhum Pedido ainda!</p>
-                            <p class="card-text">Tá esperando o que?</p>
+                            {% if pedidos %}
+                                {% for pedido in pedidos %}
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Pedido Numero: {{ pedido.idpedido }}</h4>
+                                            <h5 class="card-title">Valor Total: {{ pedido.valor }}</h5>
+                                            <p class="card-text">Data: {{ pedido.datapedido }}</p>
+                                            <p class="card-text">Status: {{ pedido.status }}</p>
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <p class="card-text">Parece que você não possui nenhum Pedido ainda!</p>
+                                <p class="card-text">Tá esperando o que?</p>
+                            {% endif %}
+
+
                         </div>
                     </div>
                 </div>

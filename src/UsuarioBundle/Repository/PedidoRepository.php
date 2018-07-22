@@ -19,4 +19,14 @@ class PedidoRepository extends \Doctrine\ORM\EntityRepository
             )->setParameter('usuario',$usuario)
             ->getSingleResult();
     }
+
+    public function buscaPedidoValido($usuario)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT p FROM UsuarioBundle:Pedido p WHERE p.idusuario = :usuario and p.status <> 'fase1'"
+            )->setParameter('usuario',$usuario)
+            ->getResult();
+    }
 }

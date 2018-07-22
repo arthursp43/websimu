@@ -3,6 +3,7 @@
 namespace UsuarioBundle\Controller;
 
 
+use Symfony\Component\Validator\Constraints\Date;
 use UsuarioBundle\Entity\Itenspedido;
 use Symfony\Component\Validator\Constraints\DateTime;
 use UsuarioBundle\Entity\Pedido;
@@ -54,6 +55,11 @@ class RecargaController extends Controller
          */
         $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
 
+        /* @var PedidoRepository
+         */
+        $PedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Pedido');
+
+
 
 
         $Login = $LoginRepositorio->buscaLogin($login,$senha);
@@ -67,13 +73,17 @@ class RecargaController extends Controller
 
             $usuario = $UsuarioRepository->buscaUsuario($Login);
 
+            $pedidos = $PedidoRepository->buscaPedidoValido($usuario);
+
+
 
             setcookie('login', $login);
             setcookie('senha', $senha);
             setcookie('usuario', $usuario->getIdusuario()."");
 
             return $this->render('@Usuario/Recarga/homepage.html.twig',array(
-                'usuario'=>$usuario
+                'usuario'=>$usuario,
+                'pedidos'=>$pedidos
 
             ));
         }
@@ -280,6 +290,178 @@ class RecargaController extends Controller
         {
 
 
+            return $this->redirectToRoute('login', array('warning' => 1));
+            //return $this->render('@Usuario/Default/login.html.twig',array('warning'=>$warning));
+        }
+
+
+    }
+
+    /**
+     * @Route("/recarga/excluir-item-pedido", name="recarga_excluir_item_pedido")
+     */
+    public function excluirItemPedidoAction(Request $request)
+    {
+
+        ///$request;
+        if (isset($_POST['login'])) {
+            $login = $_POST['login'];
+        } else {
+            $login = $_COOKIE['login'];
+        }
+        if (isset($_POST['senha'])) {
+            $senha = $_POST['senha'];
+        } else {
+            $senha = $_COOKIE['senha'];
+        }
+
+        /* @var UsuarioRepository
+         */
+        $UsuarioRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario');
+
+        /* @var UsuarioRepository
+         */
+        $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
+
+        /* @var CartaoRepository
+         */
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+
+
+        $Login = $LoginRepositorio->buscaLogin($login, $senha);
+
+        //var_dump($log);exit;
+
+
+        if (count($Login) != 0) {
+            //$usuario = "a";
+
+            $usuario = $UsuarioRepository->buscaUsuario($Login);
+            $status = 'Ativo';
+            $cartoes = $CartaoRepository->buscaCartoesAtivos($usuario, $status);
+
+            setcookie('login', $login);
+            setcookie('senha', $senha);
+            setcookie('usuario', $usuario->getIdusuario() . "");
+
+            /* @var PedidoRepository
+             */
+            $PedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Pedido');
+
+
+            $itempedido = new Itenspedido();
+
+            $idpedido = $request->request->get('iditenspedido');
+
+            /* @var PedidoRepository
+             */
+            $itemPedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Itenspedido');
+
+            $itempedido = $itemPedidoRepository->find($idpedido);
+
+
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($itempedido);
+            $em->flush();
+
+            return new JsonResponse(array(), 200);
+        } else {
+            return $this->redirectToRoute('login', array('warning' => 1));
+            //return $this->render('@Usuario/Default/login.html.twig',array('warning'=>$warning));
+        }
+    }
+
+        /**
+         * @Route("/recarga/encaminhar-pedido", name="recarga_encaminhar_pedido")
+         */
+        public function encaminharPedido(Request $request)
+    {
+
+        ///$request;
+        if(isset($_POST['login'])) {
+            $login = $_POST['login'];
+        }
+        else{
+            $login = $_COOKIE['login'];
+        }
+        if(isset($_POST['senha'])) {
+            $senha = $_POST['senha'];
+        }
+        else{
+            $senha = $_COOKIE['senha'];
+        }
+
+        /* @var UsuarioRepository
+         */
+        $UsuarioRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario');
+
+        /* @var UsuarioRepository
+         */
+        $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
+
+        /* @var CartaoRepository
+         */
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+        $Login = $LoginRepositorio->buscaLogin($login,$senha);
+
+
+
+        if(count($Login)!=0)
+        {
+            //$usuario = "a";
+
+            $usuario = $UsuarioRepository->buscaUsuario($Login);
+            $status='Ativo';
+            $cartoes = $CartaoRepository->buscaCartoesAtivos($usuario,$status);
+
+            setcookie('login', $login);
+            setcookie('senha', $senha);
+            setcookie('usuario', $usuario->getIdusuario()."");
+
+            $idpedido =$request->request->get('id');
+
+            /* @var PedidoRepository
+             */
+            $PedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Pedido');
+
+            $pedido=$PedidoRepository->find($idpedido);
+
+            $valor = 0;
+
+            /* @var ItensPedidoRepository
+             */
+            $ItensPedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Itenspedido');
+            $itenspedido= $ItensPedidoRepository->findBy(array('pedidopedido' => $pedido));
+
+
+            foreach ($itenspedido as $itenpedido) {
+                $valor = $valor + $itenpedido->getValor();
+            }
+
+
+
+
+
+            $pedido->setStatus("Aguardando Confirmação de Pagamento");
+            $pedido->setValor($valor);
+
+
+
+            $pedido->setDatapedido("");
+
+
+
+
+
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($pedido);
+            $em->flush();
+
+            return new JsonResponse(array(),200);
+        }
+        else
+        {
             return $this->redirectToRoute('login', array('warning' => 1));
             //return $this->render('@Usuario/Default/login.html.twig',array('warning'=>$warning));
         }
