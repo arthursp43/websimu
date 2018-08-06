@@ -15,6 +15,14 @@ class DefaultController extends Controller
         return $this->render('@Usuario/Default/homepage.html.twig');
     }
 
+    /**
+     * @Route("/minha-conta", name="minha_conta")
+     */
+    public function minhaContaAction()
+    {
+        return $this->render('@Usuario/Default/homepage1.html.twig');
+    }
+
     
 
     /**

@@ -4,24 +4,27 @@
     <br><br>
     <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-4">{{ warning|default("")}}</div>
+        <div class="col-sm-4"><img src="https://cdn.discordapp.com/attachments/306215434762584074/475758931587760138/a6eac80a-f609-4b1a-a799-633404cab7bb.jpg" width="350.33" height="261.27"><br>{{ warning|default("")}}<br><br></div>
         <div class="col-sm-4"></div>
     </div>
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
                 <form id="form-login" name="form-login" action="{{ path('inicio') }}" method="POST" >
-                <div class="form-group">
+                <div class="form-group" style="width: 350px;">
                     <label for="exampleInputEmail1">Login</label>
                     <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp" placeholder="Login de Usuario">
 
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="width: 350px;">
                     <label for="exampleInputPassword1">Senha</label>
                     <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
                 </div>
-                <button type="submit" id="btn-login2" name="btn-salvar2" class="btn btn-primary btn-lg" role="button">Login</button>
-                <button type="button" id="btn-registrar" name="btn-salvar" class="btn btn-primary btn-lg" role="button">Quero Me Registrar!</button>
+                <div class="form-group" style="width: 350px;">
+                <center><button id="btn-login2" name="btn-login2" class="btn btn-primary btn-lg" role="button">Login</button>
+                <a href="{{ path('registrar') }}"><button type="button" id="btn-registrar" name="btn-salvar" class="btn btn-primary btn-lg" role="button">Quero Me Registrar!</button></a>
+            </center>
+                </div>
 
                 </form>
         </div>

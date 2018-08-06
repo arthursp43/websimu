@@ -57,6 +57,13 @@ class Cartao
     private $status;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="cod_seguranca", type="string", length=3, nullable=false)
+     */
+    private $codSeguranca;
+
+    /**
      * @var \Usuario
      *
      * @ORM\OneToOne(targetEntity="Usuario")
@@ -137,6 +144,24 @@ class Cartao
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCodSeguranca()
+    {
+        return $this->codSeguranca;
+    }
+
+    /**
+     * @param string $tipo
+     * @return Cartao
+     */
+    public function setCodSeguranca($codSeguranca)
+    {
+        $this->codSeguranca = $codSeguranca;
         return $this;
     }
 

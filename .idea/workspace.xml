@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01f0829d-a002-4acb-bbd2-ecae785b0ad4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Recarga/configuracao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Recarga/configuracao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/6e5cdae.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/6e5cdae.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/6e5cdae_configuracao_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/6e5cdae_configuracao_1.js" afterDir="false" />
-    </list>
+    <list default="true" id="01f0829d-a002-4acb-bbd2-ecae785b0ad4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +17,7 @@
       <file leaf-file-name="RecargaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
+            <state relative-caret-position="7361">
               <caret line="448" selection-start-line="448" selection-end-line="448" />
               <folding>
                 <element signature="e#45#94#0#PHP" expanded="true" />
@@ -38,7 +29,7 @@
       <file leaf-file-name="Pedido.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Entity/Pedido.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="289">
               <caret line="17" column="33" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="33" />
             </state>
           </provider>
@@ -47,7 +38,7 @@
       <file leaf-file-name="recarga1.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="1156">
               <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
@@ -65,7 +56,7 @@
       <file leaf-file-name="homepage.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
+            <state relative-caret-position="901">
               <caret line="53" column="91" selection-start-line="53" selection-start-column="91" selection-end-line="53" selection-end-column="91" />
             </state>
           </provider>
@@ -83,7 +74,7 @@
       <file leaf-file-name="homepage.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="884">
               <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
             </state>
           </provider>
@@ -238,7 +229,7 @@
       <path value="$PROJECT_DIR$/vendor/components/bootstrap" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="20" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -377,14 +368,15 @@
       <workItem from="1531862064996" duration="6196000" />
       <workItem from="1531960494678" duration="1010000" />
       <workItem from="1532017758863" duration="9552000" />
+      <workItem from="1532381024345" duration="593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125815000" />
+    <option name="totallyTimeSpent" value="126408000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20694445" />
@@ -410,20 +402,20 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20694445" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285151" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Event Log" order="11" side_tool="true" visible="true" weight="0.1498029" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -678,7 +670,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Entity/Pedido.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="289">
           <caret line="17" column="33" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="33" />
         </state>
       </provider>
@@ -712,7 +704,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
+        <state relative-caret-position="7361">
           <caret line="448" selection-start-line="448" selection-end-line="448" />
           <folding>
             <element signature="e#45#94#0#PHP" expanded="true" />
@@ -722,21 +714,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="1156">
           <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="884">
           <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
+        <state relative-caret-position="901">
           <caret line="53" column="91" selection-start-line="53" selection-start-column="91" selection-end-line="53" selection-end-column="91" />
         </state>
       </provider>

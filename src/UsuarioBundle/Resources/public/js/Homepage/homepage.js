@@ -4,18 +4,24 @@ $(document).ready(function() {
     setTimeout(function(){
         $("#chegou").click(function () {
         var id =$(this).attr("data-id");
-            bootbox.confirm({
-                message: "Confirmar chegada do cartão número: "+id,
-                callback: function(result){
-                    if(result)
-                    {
+            
+                
+                    
 
-                        bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
-                        location.href='http://127.0.0.1:8000/cartao/chegou/'+id;
-                    }
+                        //bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
+                        bootbox.prompt({ 
+                          title: "Para confirmar a chegada do cartão innforme o Código de Segurança que está no verso do cartão.", 
+                          closeButton: false,
+                          callback: function(result){ 
 
-                }
-            })
+                            alert(result);
+                          /* result = String containing user input if OK clicked or null if Cancel clicked */ }
+                        })
+                        //location.href='http://127.0.0.1:8000/cartao/chegou/'+id;
+                    
+
+                
+            
 
 
         });

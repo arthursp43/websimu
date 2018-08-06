@@ -105,6 +105,12 @@ class CartaoController extends Controller
 
         }
 
+        $codSeguranca="";
+        for ($x = 0; $x <= 2; $x++) {
+            $codSeguranca=$codSeguranca.rand(1,9)."";
+
+        }
+
         /* @var Cartao
          */
         $cartao = new Cartao();
@@ -112,6 +118,7 @@ class CartaoController extends Controller
         $cartao->setIdusuario($usuario);
         $cartao->setNumerocartao($numeroCartao);
         $cartao->setSaldo(0);
+        $cartao->setCodSeguranca($codSeguranca);
 
         $cartao->setTitular($titular);
         $cartao->setValidade($validade);

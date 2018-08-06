@@ -109,6 +109,85 @@ class LoginController extends Controller
         }*/
     }
 
+     /**
+     * @Route("/minha-conta", name="minha_conta")
+     */
+    public function minhaContaAction()
+    {
+
+        //$request;
+        if(isset($_POST['login'])) {
+            $login = $_POST['login'];
+        }
+        else{
+            $login = $_COOKIE['login'];
+        }
+        if(isset($_POST['senha'])) {
+            $senha = $_POST['senha'];
+        }
+        else{
+            $senha = $_COOKIE['senha'];
+        }
+
+        /* @var UsuarioRepository
+         */
+        $UsuarioRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario');
+
+        /* @var UsuarioRepository
+         */
+        $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
+
+        /* @var CartaoRepository
+         */
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+
+        
+
+        $Login = $LoginRepositorio->buscaLogin($login,$senha);
+
+         //var_dump($log);exit;
+
+
+        if(count($Login)!=0)
+        {
+            //$usuario = "a";
+
+            $usuario = $UsuarioRepository->buscaUsuario($Login);
+            $cartoes = $CartaoRepository->buscaCartoes($usuario);
+
+            setcookie('login', $login);
+            setcookie('senha', $senha);
+            setcookie('usuario', $usuario->getIdusuario()."");
+
+            return $this->render('@Usuario/Default/homepage1.html.twig',array(
+                'usuario'=>$usuario,
+                'cartoes'=>$cartoes
+            ));
+        }
+        else
+        {
+            
+
+            return $this->redirectToRoute('login', array('warning' => 1));
+            //return $this->render('@Usuario/Default/login.html.twig',array('warning'=>$warning));
+        }
+
+/*
+        if($Login)
+        {
+            $usuario = $UsuarioRepository->buscaUsuario($Login);
+            //return $this->render('@Usuario/Default/homepage.html.twig');
+                return $this->redirectToRout('')
+            //var_dump($usuario);exit;
+            
+        }
+        else
+        {
+
+            return new JsonResponse(array(),500);
+        }*/
+    }
+
     
 
 
