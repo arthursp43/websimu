@@ -14,7 +14,23 @@ $(document).ready(function() {
                           closeButton: false,
                           callback: function(result){ 
 
-                            alert(result);
+
+                            $.ajax({
+                                url: 'http://127.0.0.1:8000/cartao/chegou',
+                                type: "post",
+                                cache: false,
+                                blockUI: true,
+                                data: {result:result, id:id},
+                                success: function(response) {
+                                    if(response['status']=='ok')
+                                    {
+                                        bootbox.alert("Chegada do Cartão Registrada com Sucesso, você já pode começar a utiliza-lo")
+                                        location.href='http://127.0.0.1:8000/cartao/bloquear/'+id;
+                                    }else{
+                                        bootbox.alert("Código de Segurança inválido!")
+                                    }
+                                }
+                            });
                           /* result = String containing user input if OK clicked or null if Cancel clicked */ }
                         })
                         //location.href='http://127.0.0.1:8000/cartao/chegou/'+id;
@@ -35,7 +51,7 @@ $(document).ready(function() {
                     if(result)
                     {
                         bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
-                        location.href='http://127.0.0.1:8000/cartao/bloquear/'+id;
+                        location.href='http://127.0.0.1:8000/inicio';
                     }
 
                 }

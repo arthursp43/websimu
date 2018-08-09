@@ -143,25 +143,31 @@ class CartaoController extends Controller
 
 
     /**
-     * @Route("/cartao/chegou/{id}", name="cartao_chegou")
+     * @Route("/cartao/chegou", name="cartao_chegou")
      */
-    public function chegouCartaoAction($id)
+    public function chegouCartaoAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
-        /* @var CartaoRepository
-         */
+
+        $id= $request->request->get('id');
+        $codSeguranca= $request->request->get('result');
+
         $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
 
         $cartao = $CartaoRepository->buscaCartao($id);
 
-        $cartao->setStatus('Ativo');
+        if($cartao->getCodSeguranca() == $codSeguranca)
+        {
+             $cartao->setStatus('Ativo');
 
-        $em->persist($cartao);
-        $em->flush();
+             $em->persist($cartao);
+             $em->flush();
 
-        return $this->redirectToRoute('inicio' );
-
+             return new JsonResponse(array('status'=>'ok'),200);
+        }else{
+            return new JsonResponse(array('status'=>'errado'),200);
+        }
     }
 
     /**
