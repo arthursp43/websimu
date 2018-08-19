@@ -7,11 +7,11 @@
         <tr>
             <td style="vertical-align: top;">
                 <ul class="list-group">
-                    <li class="list-group-item active"><form action="{{ path('inicio') }}" method="post">
+                    <li class="list-group-item"><form action="{{ path('inicio') }}" method="post">
                             <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
                             <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
                             <button style="width: 136px;"type="submit" class="btn btn-primary">Inicio</button></form></li>
-                    <li class="list-group-item"><form action="{{ path('inicio') }}" method="post">
+                    <li class="list-group-item active"><form action="{{ path('minha_conta') }}" method="post">
                             <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
                             <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
                             <button style="width: 136px;"type="submit" class="btn btn-primary">Minha Conta</button></form></li>

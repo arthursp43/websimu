@@ -24,6 +24,20 @@ $(document).ready(function() {
 
 
         });
+        $("#tipo").change(function () {
+
+            if($("#tipo").val()=='VALE TRANSPORTE')
+            {
+                $("#doc1").css('display', 'block');
+                $("#doc2").css('display', 'none');
+            }
+            else{
+                $("#doc1").css('display', 'none');
+                $("#doc2").css('display', 'block');
+            }
+
+        });
+
     },100);
 });
 

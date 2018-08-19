@@ -4,12 +4,13 @@
     <br><br>
     <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-4"><img src="https://cdn.discordapp.com/attachments/306215434762584074/475758931587760138/a6eac80a-f609-4b1a-a799-633404cab7bb.jpg" width="350.33" height="261.27"><br>{{ warning|default("")}}<br><br></div>
+        <div class="col-sm-4"><center><img src="https://cdn.discordapp.com/attachments/306215434762584074/475758931587760138/a6eac80a-f609-4b1a-a799-633404cab7bb.jpg" width="350.33" height="261.27"><br>{{ warning|default("")}}<br><br></div>
+        </center
         <div class="col-sm-4"></div>
     </div>
     <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+        <div class="col-sm-4"><center>
                 <form id="form-login" name="form-login" action="{{ path('inicio') }}" method="POST" >
                 <div class="form-group" style="width: 350px;">
                     <label for="exampleInputEmail1">Login</label>
@@ -29,6 +30,7 @@
                 </form>
         </div>
         <div class="col-sm-4"></div>
+        <center>
     </div>
 
 {% endblock %}

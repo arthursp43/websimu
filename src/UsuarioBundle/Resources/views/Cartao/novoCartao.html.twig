@@ -7,7 +7,11 @@
         <tr>
             <td style="vertical-align: top;">
                 <ul class="list-group">
-                    <li class="list-group-item active"><form action="{{ path('inicio') }}" method="post">
+                    <li class="list-group-item"><form action="{{ path('inicio') }}" method="post">
+                            <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
+                            <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
+                            <button style="width: 136px;"type="submit" class="btn btn-primary">Inicio</button></form></li>
+                    <li class="list-group-item active"><form action="{{ path('minha_conta') }}" method="post">
                             <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
                             <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
                             <button style="width: 136px;"type="submit" class="btn btn-primary">Minha Conta</button></form></li>
@@ -21,7 +25,7 @@
                             <button style="width: 136px;"type="submit" class="btn btn-primary">Configuração</button></form></li>
                 </ul>
             </td>
-            <td style="vertical-align: top;width: 373px;">
+            <td style="vertical-align: top;width: 500px;">
 
 
             </td>
@@ -34,13 +38,14 @@
                         <div class="card-body">
                             <form name="form1" id="form1" method="post" action="{{ path('cartao_registrar') }}">
                             <h4 class="card-title">Titular:<input type="text" class="form-control" id="titular" name="titular" aria-describedby="emailHelp" placeholder="Nome do Titular" required> </h4>
-                            <h5 class="card-title">Validade:<input type="text" class="form-control" id="validade" name="validade" aria-describedby="emailHelp" placeholder="XX/XX/XXXX" required> </h5>
-                            <h5 class="card-title">Tipo:<select class="form-control" id="tipo" name="tipo"  ><option value="VALE TRANSPORTE">Vale Transporte</option></select> </h5>
+                            <h5 class="card-title">Tipo:<select class="form-control" id="tipo" name="tipo"  ><option>Escolha o Tipo de Cartão</option><option value="VALE TRANSPORTE">Vale Transporte</option><option value="PASSE ESCOLAR">Passe Escolar</option></select> </h5>
+                            <h5 class="card-title" style="display: none;" id="doc1"><br><center>Documentos:</center><br><br>RG/CNH FRENTE<br><input type="file" class="form-control"><br><br>RG/CNH VERSO<br><input type="file" class="form-control"><br><br>Comprovante Residência:<br><input type="file" class="form-control"><br> </h5>
+                                <h5 class="card-title" style="display: none;" id="doc2"><br><center>Documentos:</center><br><br>RG/CNH FRENTE<br><input type="file" class="form-control"><br><br>RG/CNH VERSO<br><input type="file" class="form-control"><br><br>Comprovante Residência:<br><input type="file" class="form-control"><br><br>Declaração Escolar<br><input type="file" class="form-control"><br> </h5>
 
                                 <h5 class="card-title">
                                         <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
                                         <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
-                                        <button type="button" name="enviar" id="enviar" class="btn btn-primary">Cadastrar Cartão</button></h5>
+                                    <center><button type="button" name="enviar" id="enviar" class="btn btn-primary">Cadastrar Cartão</button></center></h5>
                             </form>
                         </div>
 
@@ -53,6 +58,7 @@
 
             </td>
         </tr>
+</center>
     </table>
 
 

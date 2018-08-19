@@ -12,7 +12,9 @@ use UsuarioBundle\Entity\Cartao;
 use UsuarioBundle\Entity\Endereco;
 use UsuarioBundle\Entity\Login;
 use UsuarioBundle\Entity\Usuario;
+use UsuarioBundle\Entity\Notificacao;
 use UsuarioBundle\Repository\LoginRepository;
+use UsuarioBundle\Repository\NotificacaoRepository;
 use UsuarioBundle\Repository\UsuarioRepository;
 
 
@@ -120,6 +122,8 @@ class CartaoController extends Controller
         $cartao->setSaldo(0);
         $cartao->setCodSeguranca($codSeguranca);
 
+        $validade="31/12/2020";
+
         $cartao->setTitular($titular);
         $cartao->setValidade($validade);
         $cartao->setTipo($tipo);
@@ -128,6 +132,16 @@ class CartaoController extends Controller
 
         //var_dump($usuario);exit;
         $em->persist($cartao);
+        $em->flush();
+
+        /** @var Notificacao $notificacao */
+        $notificacao = new Notificacao();
+        $notificacao->setTitulo('Novo Pedido de Cartão!');
+        $notificacao->setDescricao('Seu cartão  de numero '.$cartao->getNumerocartao().' foi solicitado com sucesso, e o mesmo já se encontra em produção!');
+        $notificacao->setStatus(0);
+        $notificacao->setIdUsuario($usuario);
+
+        $em->persist($notificacao);
         $em->flush();
 
 

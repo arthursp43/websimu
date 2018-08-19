@@ -25,7 +25,7 @@ $(document).ready(function() {
                                     if(response['status']=='ok')
                                     {
                                         bootbox.alert("Chegada do Cartão Registrada com Sucesso, você já pode começar a utiliza-lo")
-                                        location.href='http://127.0.0.1:8000/cartao/bloquear/'+id;
+                                        location.href='http://127.0.0.1:8000/inicio';
                                     }else{
                                         bootbox.alert("Código de Segurança inválido!")
                                     }
@@ -44,6 +44,7 @@ $(document).ready(function() {
 
 
         $("#bloquear").click(function () {
+            alert('eae');
             var id =$(this).attr("data-id");
             bootbox.confirm({
                 message: "Confirmar Bloqueio cartão número: "+id,
@@ -51,7 +52,7 @@ $(document).ready(function() {
                     if(result)
                     {
                         bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Aguarde...</div>' })
-                        location.href='http://127.0.0.1:8000/inicio';
+                        location.href='http://127.0.0.1:8000/cartao/bloquear/'+id;
                     }
 
                 }
