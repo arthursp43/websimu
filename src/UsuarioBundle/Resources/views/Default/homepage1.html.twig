@@ -88,6 +88,18 @@
                 <div class="card">
                     <h5 class="card-header" style="height: 63px;width: 373px;">Notificações</h5>
 
+                    {% if notificacoes %}
+                        {% for notificacao in notificacoes %}
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ notificacao.titulo }}</h4>
+                                    <p class="card-text">{{ notificacao.descricao }}</p>
+                                    <p class="card-text"><a href="{{ path('ler_notificacao',{'id':notificacao.id}) }}">Lido!</a></p>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
                         <div class="card">
                             <div class="card-body">
 
@@ -95,6 +107,7 @@
 
                             </div>
                         </div>
+                    {% endif %}
 
 
                 </div>

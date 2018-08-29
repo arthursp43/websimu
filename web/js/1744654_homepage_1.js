@@ -44,7 +44,6 @@ $(document).ready(function() {
 
 
         $("#bloquear").click(function () {
-            alert('eae');
             var id =$(this).attr("data-id");
             bootbox.confirm({
                 message: "Confirmar Bloqueio cartão número: "+id,
@@ -91,6 +90,29 @@ $(document).ready(function() {
 
                 }
             })
+
+
+        });
+
+
+        $("#saldo").click(function () {
+            var id =$(this).attr("data-id");
+
+            $.ajax({
+                url: 'http://127.0.0.1:8000/cartao/saldo',
+                type: "post",
+                cache: false,
+                blockUI: true,
+                data: dadosFormulario,
+                success: function(response) {
+                    
+
+
+// do something in the background
+
+                }
+            });
+
 
 
         });

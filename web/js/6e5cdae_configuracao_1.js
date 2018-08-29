@@ -34,13 +34,13 @@ $(document).ready(function() {
                 blockUI: true,
                 data: dadosFormulario,
                 success: function(response) {
+
                     bootbox.alert({
-                        size: "small",
-                        title: "Item Pedido",
-                        message: "Iten Cadastrado com Sucesso",
-                        callback: function(){
+                        message: "`Item registrado com Sucesso!",
+                        callback: function () {
                             location.href='http://127.0.0.1:8000/recarga/meus-cartoes/'+dadosFormulario['id'];
                         }
+
                     })
                 }
             });
@@ -59,8 +59,6 @@ $(document).ready(function() {
                 data: dadosFormulario,
                 success: function(response) {
                     bootbox.alert({
-                        size: "small",
-                        title: "Item Pedido",
                         message: "Iten Removido com Sucesso",
                         callback: function(){
                             location.href='http://127.0.0.1:8000/recarga/meus-cartoes/'+dadosFormulario['id'];
@@ -82,12 +80,11 @@ $(document).ready(function() {
                 blockUI: true,
                 data: dadosFormulario,
                 success: function(response) {
+
                     bootbox.alert({
-                        size: "small",
-                        title: "Pedido",
-                        message: "Pedido Confirmado com Sucesso",
-                        callback: function(){
-                            location.href='http://127.0.0.1:8000/recarga/inicio';
+                        message: "`Pedido Confirmado com Sucesso!",
+                        callback: function () {
+                            location.href='http://127.0.0.1:8000/recarga/checkout/'+dadosFormulario['id'];
                         }
                     })
                 }

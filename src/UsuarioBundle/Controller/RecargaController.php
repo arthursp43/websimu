@@ -4,8 +4,11 @@ namespace UsuarioBundle\Controller;
 
 
 use Symfony\Component\Validator\Constraints\Date;
+use UsuarioBundle\Entity\Cartao;
 use UsuarioBundle\Entity\Itenspedido;
 use Symfony\Component\Validator\Constraints\DateTime;
+use UsuarioBundle\Entity\Notificacao;
+use UsuarioBundle\Entity\Pagamento;
 use UsuarioBundle\Entity\Pedido;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -60,6 +63,7 @@ class RecargaController extends Controller
         $PedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Pedido');
 
 
+        $NotificacaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Notificacao');
 
 
         $Login = $LoginRepositorio->buscaLogin($login,$senha);
@@ -81,9 +85,15 @@ class RecargaController extends Controller
             setcookie('senha', $senha);
             setcookie('usuario', $usuario->getIdusuario()."");
 
+            $notificacoes = $NotificacaoRepository->findBy(array(
+                'idUsuario'=>$usuario,
+                'status'=>0
+            ), array('id'=>'DESC'));
+
             return $this->render('@Usuario/Recarga/homepage.html.twig',array(
                 'usuario'=>$usuario,
-                'pedidos'=>$pedidos
+                'pedidos'=>$pedidos,
+                'notificacoes'=>$notificacoes
 
             ));
         }
@@ -179,12 +189,18 @@ class RecargaController extends Controller
                 $itenspedido1 = $ItensPedidoRepository->findBy(array('pedidopedido' => $pedido));
 
 
+            $NotificacaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Notificacao');
+            $notificacoes = $NotificacaoRepository->findBy(array(
+                'idUsuario'=>$usuario,
+                'status'=>0
+            ), array('id'=>'DESC'));
 
             return $this->render('@Usuario/Recarga/recarga1.html.twig', array(
                     'pedido'=>$pedido,
                     'usuario' => $usuario,
                     'cartoes' => $cartoes,
-                    'itenspedido1' => $itenspedido1
+                    'itenspedido1' => $itenspedido1,
+                    'notificacoes' => $notificacoes
                 ));
 
         }
@@ -469,10 +485,133 @@ class RecargaController extends Controller
 
     }
 
-    
+    /**
+     * @Route("/recarga/checkout/{id}", name="recarga_checkout")
+     */
+    public function recargaCheckout($id)
+    {
+
+        if(isset($_POST['login'])) {
+            $login = $_POST['login'];
+        }
+        else{
+            $login = $_COOKIE['login'];
+        }
+        if(isset($_POST['senha'])) {
+            $senha = $_POST['senha'];
+        }
+        else{
+            $senha = $_COOKIE['senha'];
+        }
+
+        $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
+        $UsuarioRepository= $this->getDoctrine()->getRepository('UsuarioBundle:Usuario');
+
+        $Login = $LoginRepositorio->buscaLogin($login,$senha);
+
+        $usuario = $UsuarioRepository->buscaUsuario($Login);
 
 
+        $PedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Pedido');
 
+        /** @var Pedido $pedido */
+        $pedido = $PedidoRepository->find($id);
+
+        $valorTotal = $pedido->getValor();
+
+        return $this->render('@Usuario/Pagamento/homepage.html.twig',
+            array(
+                'usuario'=>$usuario,
+                'pedido'=>$pedido,
+                 'valor'=>$valorTotal
+        ));
+    }
+
+    /**
+     * @Route("/recarga/pagamento", name="recarga_pagamento")
+     */
+    public function efetuarPagamentoAction(Request $request)
+    {
+
+        if(isset($_POST['login'])) {
+            $login = $_POST['login'];
+        }
+        else{
+            $login = $_COOKIE['login'];
+        }
+        if(isset($_POST['senha'])) {
+            $senha = $_POST['senha'];
+        }
+        else{
+            $senha = $_COOKIE['senha'];
+        }
+
+        $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
+        $UsuarioRepository= $this->getDoctrine()->getRepository('UsuarioBundle:Usuario');
+
+        $Login = $LoginRepositorio->buscaLogin($login,$senha);
+
+        $usuario = $UsuarioRepository->buscaUsuario($Login);
+
+
+        $PedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Pedido');
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+
+        $itemPedidoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Itenspedido');
+
+        $id=$request->request->get('id');
+
+        /** @var Pedido $pedido */
+        $pedido = $PedidoRepository->find($id);
+
+        $pedido->setStatus("Concluído");
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($pedido);
+        $em->flush();
+
+        $itensPedido = $itemPedidoRepository->findBy(array('pedidopedido'=>$pedido));
+
+        foreach ($itensPedido as $item)
+        {
+            /** @var Itenspedido $item */
+
+            /** @var Cartao $cartao */
+            $cartao =  $item->getCartaousuario();
+
+            $cartao->setSaldo($cartao->getSaldo()+$item->getValor());
+
+            $em->persist($pedido);
+            $em->flush();
+
+        }
+
+
+        /** @var Pagamento $pagamento */
+        $pagamento = new Pagamento();
+        $pagamento->setStatus("Aprovado!");
+        $pagamento->setData("28/08/2018");
+        $pagamento->setTipo("Cartão de Crédito 1x");
+
+        $em->persist($pagamento);
+        $em->flush();
+
+
+        $notificacao= new Notificacao();
+
+        $notificacao->setStatus(0);
+        $notificacao->setTitulo("Pedido Concluído!");
+        $notificacao->setDescricao("Seu Pedido de número ".$pedido->getIdpedido()." de valor: R$".$pedido->getValor().",00 ");
+        $notificacao->setIdUsuario($usuario);
+
+        $em->persist($notificacao);
+        $em->flush();
+
+
+        return new JsonResponse(array(),200);
+
+
+    }
 
 
 }

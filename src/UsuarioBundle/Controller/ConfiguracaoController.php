@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use UsuarioBundle\Entity\Endereco;
 use UsuarioBundle\Entity\Login;
+use UsuarioBundle\Entity\Notificacao;
 use UsuarioBundle\Entity\Usuario;
 use UsuarioBundle\Repository\LoginRepository;
 use UsuarioBundle\Repository\UsuarioRepository;
@@ -66,6 +67,8 @@ class ConfiguracaoController extends Controller
          */
         $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
 
+        $NotificacaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Notificacao');
+
 
 
         $Login = $LoginRepositorio->buscaLogin($login,$senha);
@@ -79,6 +82,11 @@ class ConfiguracaoController extends Controller
 
             $usuario = $UsuarioRepository->buscaUsuario($Login);
 
+            $notificacoes = $NotificacaoRepository->findBy(array(
+                'idUsuario'=>$usuario,
+                'status'=>0
+            ), array('id'=>'DESC'));
+
 
             setcookie('login', $login);
             setcookie('senha', $senha);
@@ -87,7 +95,8 @@ class ConfiguracaoController extends Controller
             return $this->render('@Usuario/Configuracao/homepage.html.twig',array(
                 'usuario'=>$usuario,
                 'warninglogin'=>$txtwarninglogin,
-                'warningsenha'=>$txtwarningsenha
+                'warningsenha'=>$txtwarningsenha,
+                'notificacoes'=>$notificacoes
             ));
         }
         else
@@ -116,7 +125,12 @@ class ConfiguracaoController extends Controller
          */
         $LoginRepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Login');
 
+        $Usuariorepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario');
+
         $login = $LoginRepositorio->find($id);
+
+
+        $usuario = $Usuariorepositorio->buscaUsuario($login);
 
         if(($login->getLogin() == $loginvelho) and ($novologin==$cnovologin))
         {
@@ -125,6 +139,16 @@ class ConfiguracaoController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($login);
+            $em->flush();
+
+            /** @var Notificacao $notificacao */
+            $notificacao = new Notificacao();
+            $notificacao->setTitulo('Mudança na sua Conta!');
+            $notificacao->setDescricao('Você alterou seu Login!');
+            $notificacao->setStatus(0);
+            $notificacao->setIdUsuario($usuario);
+
+            $em->persist($notificacao);
             $em->flush();
             return $this->render('@Usuario/Default/login.html.twig');
 
@@ -153,6 +177,10 @@ class ConfiguracaoController extends Controller
 
         $login = $LoginRepositorio->find($id);
 
+        $Usuariorepositorio = $this->getDoctrine()->getRepository('UsuarioBundle:Usuario');
+
+        $usuario = $Usuariorepositorio->buscaUsuario($login);
+
         if(($login->getSenha() == $senhavelha) and ($novasenha==$cnovasenha))
         {
 
@@ -160,6 +188,16 @@ class ConfiguracaoController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($login);
+            $em->flush();
+
+            /** @var Notificacao $notificacao */
+            $notificacao = new Notificacao();
+            $notificacao->setTitulo('Mudança na sua Conta!!');
+            $notificacao->setDescricao('Você alterou sua Senha!');
+            $notificacao->setStatus(0);
+            $notificacao->setIdUsuario($usuario);
+
+            $em->persist($notificacao);
             $em->flush();
             return $this->render('@Usuario/Default/login.html.twig');
 

@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class NotificacaoController extends Controller
 {
     /**
-     * @Route("/notificacao-lida-homepage/{id}", name="ler_notificacao_homepage")
+     * @Route("/notificacao-lida/{id}", name="ler_notificacao")
      */
     public function lerNotificacaoAction($id)
     {

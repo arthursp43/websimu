@@ -25,7 +25,7 @@ class PedidoRepository extends \Doctrine\ORM\EntityRepository
 
         return $this->getEntityManager()
             ->createQuery(
-                "SELECT p FROM UsuarioBundle:Pedido p WHERE p.idusuario = :usuario and p.status <> 'fase1'"
+                "SELECT p FROM UsuarioBundle:Pedido p WHERE p.idusuario = :usuario and p.status <> 'fase1' order by p.idpedido DESC"
             )->setParameter('usuario',$usuario)
             ->getResult();
     }

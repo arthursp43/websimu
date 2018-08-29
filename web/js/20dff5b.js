@@ -90,6 +90,8 @@ Cadastro = {
             blockUI: true,
             data: dadosFormulario,
             success: function(response) {
+                 bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Cadastro Criado com Sucesso!</div>' })
+                        
                 location.href='http://127.0.0.1:8000/login';
             }
         });

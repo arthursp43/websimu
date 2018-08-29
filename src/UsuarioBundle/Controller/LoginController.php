@@ -63,9 +63,11 @@ class LoginController extends Controller
          */
         $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
 
-        
+
 
         $Login = $LoginRepositorio->buscaLogin($login,$senha);
+
+        $NotificacaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Notificacao');
 
          //var_dump($log);exit;
 
@@ -81,9 +83,16 @@ class LoginController extends Controller
             setcookie('senha', $senha);
             setcookie('usuario', $usuario->getIdusuario()."");
 
+
+            $notificacoes = $NotificacaoRepository->findBy(array(
+                'idUsuario'=>$usuario,
+                'status'=>0
+            ), array('id'=>'DESC'));
+
             return $this->render('@Usuario/Default/homepage1.html.twig',array(
                 'usuario'=>$usuario,
-                'cartoes'=>$cartoes
+                'cartoes'=>$cartoes,
+                'notificacoes'=>$notificacoes
             ));
         }
         else

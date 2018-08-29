@@ -42,15 +42,6 @@ class Pedido
      */
     private $valor;
 
-    /**
-     * @var \Empresa
-     *
-     * @ORM\ManyToOne(targetEntity="Empresa")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idEmpresa", referencedColumnName="idEmpresa")
-     * })
-     */
-    private $idempresa;
 
     /**
      * @var \Pagamento
@@ -144,23 +135,6 @@ class Pedido
         return $this;
     }
 
-    /**
-     * @return \Empresa
-     */
-    public function getIdempresa()
-    {
-        return $this->idempresa;
-    }
-
-    /**
-     * @param \Empresa $idempresa
-     * @return Pedido
-     */
-    public function setIdempresa($idempresa)
-    {
-        $this->idempresa = $idempresa;
-        return $this;
-    }
 
     /**
      * @return \Pagamento

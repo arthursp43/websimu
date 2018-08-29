@@ -32,7 +32,7 @@ class Itenspedido
      * @var \Cartao
      *
      * @ORM\ManyToOne(targetEntity="Cartao")
-     *  @ORM\JoinColumn(name="Cartao_numeroCartao", referencedColumnName="numeroCartao")
+     *  @ORM\JoinColumn(name="numeroCartao", referencedColumnName="numeroCartao")
      *
      */
     private $cartaousuario;
@@ -43,7 +43,7 @@ class Itenspedido
      *
      * @ORM\ManyToOne(targetEntity="Pedido")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Pedido_idPedido", referencedColumnName="idPedido")
+     *   @ORM\JoinColumn(name="idPedido", referencedColumnName="idPedido")
      * })
      */
     private $pedidopedido;
