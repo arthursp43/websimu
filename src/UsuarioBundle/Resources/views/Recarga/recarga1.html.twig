@@ -30,19 +30,21 @@
                     <h5 class="card-header" style="height: 63px;width: 373px;">1º Passo</h5>
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">
+
+                                <form id="form">
                                 <input id="id" name="id" type="hidden" value="{{ pedido.idpedido|default("") }}">
-                                Escolha um Cartão:
-                                <select class="form-control form-control-lg" name="cartoes" id="cartoes" required>
+                                    <h4>Escolha um Cartão:</h4>
+                                <select class="form-control form-control-lg" name="cartoes" id="cartoes" data-parsley-error-message="Escolha um cartão!" required>
                                     <option value="">Selecione um cartão</option>
                                     {% for cartao in cartoes %}
                                         <option value="{{ cartao.numeroCartao }}">{{ cartao.numeroCartao }}</option>
                                     {% endfor %}
                                 </select>
+                                </form>
 
-                            </h4>
+                            
                             <h4 class="card-title">Qual o valor da recarga?
-                                <input type="text" class="form-control" id="valor" name="valor" placeholder="Valor R$" required><br>
+                                <input type="text" class="form-control" id="valor" name="valor" placeholder="" required><br>
                                 <button class="btn btn-primary" id="add" name="add">Adicionar Item</button>
                             </h4>
 

@@ -37,7 +37,7 @@ $(document).ready(function() {
                     });
                     dialog.init(function(){
                         setTimeout(function(){
-
+                            bootbox.alert("Seu pedido foi concluído com sucesso! ");
                             location.href='http://127.0.0.1:8000/inicio';
                         }, 3000);
                     });

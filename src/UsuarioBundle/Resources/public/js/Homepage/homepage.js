@@ -95,8 +95,11 @@ $(document).ready(function() {
         });
 
 
-        $("#saldo").click(function () {
+        $("#ver-saldo").click(function () {
             var id =$(this).attr("data-id");
+            var dadosFormulario = {};
+
+            dadosFormulario['id'] =id;
 
             $.ajax({
                 url: 'http://127.0.0.1:8000/cartao/saldo',
@@ -105,10 +108,8 @@ $(document).ready(function() {
                 blockUI: true,
                 data: dadosFormulario,
                 success: function(response) {
-                    
 
-
-// do something in the background
+                    bootbox.alert("Saldo: R$"+response['saldo']);
 
                 }
             });

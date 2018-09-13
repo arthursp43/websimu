@@ -2,51 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01f0829d-a002-4acb-bbd2-ecae785b0ad4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Pagamento/pagamentoCartao.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Pagamento/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/websimu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/websimu.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Controller/ConfiguracaoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Controller/ConfiguracaoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Controller/NotificacaoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Controller/NotificacaoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Entity/Empresa.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Entity/Itenspedido.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Entity/Itenspedido.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Entity/Pedido.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Entity/Pedido.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Repository/EnderecoRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Configuracao/configuracao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Configuracao/configuracao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Homepage/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Homepage/homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Login/efetuarLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Login/efetuarLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Pagamento/pagamentoCartao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Pagamento/pagamentoCartao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Recarga/configuracao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Recarga/configuracao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/registroUsuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/registroUsuario.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Configuracao/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Configuracao/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage1.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Pagamento/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Pagamento/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/assetic/bootstrap_css.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assetic/bootstrap_css.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/assetic/bootstrap_css_bootstrap.min_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assetic/bootstrap_css_bootstrap.min_1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/assetic/bootstrap_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assetic/bootstrap_js.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/assetic/bootstrap_js_bootstrap.min_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assetic/bootstrap_js_bootstrap.min_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assetic/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assetic/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assetic/jquery_jquery.min_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assetic/jquery_jquery.min_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/fddb9b6.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/fddb9b6.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/fddb9b6_part_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/fddb9b6_part_1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/1744654.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/1744654.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/1744654_homepage_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/1744654_homepage_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/20dff5b.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/20dff5b.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/20dff5b_registroUsuario_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/20dff5b_registroUsuario_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/2680095.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/2680095.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/2680095_efetuarLogin_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/2680095_efetuarLogin_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/2e3d93d.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/2e3d93d.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/2e3d93d_pagamentoCartao_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/2e3d93d_pagamentoCartao_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/4a4f16b.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/4a4f16b.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/4dee2c0.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/4dee2c0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/4a4f16b_configuracao_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/4a4f16b_configuracao_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/6e5cdae.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/6e5cdae.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/6e5cdae_configuracao_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/6e5cdae_configuracao_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/a56fa94.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/a56fa94.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/a56fa94_part_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/a56fa94_part_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/a56fa94_part_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/a56fa94_part_2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/f46ce7c.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/f46ce7c.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,38 +56,43 @@
     <session id="-1524439107">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="389" />
-          <entry key="php" value="2008" />
-          <entry key="twig" value="1382" />
+          <entry key="js" value="839" />
+          <entry key="php" value="2170" />
+          <entry key="twig" value="1809" />
+          <entry key="yml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="389" />
-          <entry key="PHP" value="2008" />
-          <entry key="Twig" value="1382" />
+          <entry key="JavaScript" value="839" />
+          <entry key="PHP" value="2170" />
+          <entry key="Twig" value="1809" />
+          <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="10" />
-          <entry key="php" value="24" />
-          <entry key="twig" value="14" />
+          <entry key="js" value="20" />
+          <entry key="php" value="28" />
+          <entry key="twig" value="25" />
+          <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="10" />
-          <entry key="PHP" value="24" />
-          <entry key="Twig" value="14" />
+          <entry key="JavaScript" value="20" />
+          <entry key="PHP" value="28" />
+          <entry key="Twig" value="25" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -105,58 +105,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php">
+        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="604" column="45" selection-start-line="604" selection-start-column="45" selection-end-line="604" selection-end-column="45" />
-              <folding>
-                <element signature="e#45#94#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Entity/Pedido.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="136" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="282">
+              <caret line="56" column="142" selection-start-line="56" selection-start-column="142" selection-end-line="56" selection-end-column="142" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage1.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="70" column="142" selection-start-line="70" selection-start-column="142" selection-end-line="70" selection-end-column="142" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Homepage/homepage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="131" selection-start-line="27" selection-start-column="131" selection-end-line="27" selection-end-column="131" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="56" column="110" selection-start-line="56" selection-start-column="105" selection-end-line="56" selection-end-column="110" />
+            <state relative-caret-position="374">
+              <caret line="97" column="21" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -197,9 +167,11 @@
       <find>itens</find>
       <find>boleto</find>
       <find>saldo</find>
+      <find>parsley</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\arthu\websimu\src\UsuarioBundle\Controller</dir>
+      <dir>C:\Users\arthu\websimu\vendor</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -217,19 +189,14 @@
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Entity/Endereco.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Entity/Usuario.php" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Repository/LoginRepository.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Repository/UsuarioRepository.php" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Login/efetuarLogin.js" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/registroUsuario.js" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/editarInformacao.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Configuração/homepage.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Entity/Login.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/salvarInformacaoUsuario.js" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Configuracao/configuracao.js" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Repository/CartaoRepository.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Entity/Empresa.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Entity/Pagamento.php" />
@@ -241,24 +208,29 @@
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Cartao/registroCartao.js" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Cartao/novoCartao.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/NotificacaoController.php" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/CartaoController.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/ConfiguracaoController.php" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Configuracao/homepage.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage1.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Entity/Pedido.php" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Entity/Itenspedido.php" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Pagamento/homepage.html.twig" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Recarga/configuracao.js" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Pagamento/pagamentoCartao.js" />
-        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Pagamento/homepage.html.twig" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Pagamento/pagamentoCartao.js" />
         <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Homepage/homepage.js" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Recarga/configuracao.js" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Login/efetuarLogin.js" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/registroUsuario.js" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Configuracao/homepage.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Configuracao/configuracao.js" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage1.html.twig" />
       </list>
     </option>
   </component>
@@ -321,6 +293,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/assetic-bundle" />
       <path value="$PROJECT_DIR$/vendor/components/jquery" />
       <path value="$PROJECT_DIR$/vendor/components/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/j-ben87/parsley-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -345,24 +318,6 @@
             <path>
               <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
               <item name="websimu" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="websimu" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="websimu" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="websimu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -370,6 +325,13 @@
               <item name="websimu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="websimu" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
@@ -394,6 +356,26 @@
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="websimu" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="Cartao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="websimu" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="Configuracao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
@@ -411,9 +393,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Pagamento" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="websimu" type="b2602c69:ProjectViewProjectNode" />
@@ -422,6 +402,7 @@
               <item name="UsuarioBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Default" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -492,18 +473,21 @@
       <workItem from="1532017758863" duration="9552000" />
       <workItem from="1532381024345" duration="593000" />
       <workItem from="1534699021473" duration="7367000" />
-      <workItem from="1535495282702" duration="10833000" />
+      <workItem from="1535495282702" duration="10957000" />
+      <workItem from="1536271393982" duration="1580000" />
+      <workItem from="1536787678001" duration="5694000" />
+      <workItem from="1536796736041" duration="3263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144608000" />
+    <option name="totallyTimeSpent" value="155269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15138593" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15618336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -552,26 +536,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_files.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -585,13 +554,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="144" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="144" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
@@ -639,13 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/registroUsuario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="75" column="60" lean-forward="true" selection-start-line="57" selection-start-column="8" selection-end-line="75" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Entity/Login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -657,13 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Configuracao/configuracao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -704,41 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage1.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Configuracao/homepage.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="99" column="31" selection-start-line="80" selection-start-column="20" selection-end-line="99" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="65" column="92" selection-start-line="65" selection-start-column="92" selection-end-line="65" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Login/efetuarLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="134" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Entity/Pagamento.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -750,13 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="863">
           <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="21" selection-start-line="8" selection-start-column="16" selection-end-line="25" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -774,40 +680,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="117" column="49" lean-forward="true" selection-start-line="117" selection-start-column="12" selection-end-line="117" selection-end-column="49" />
-          <folding>
-            <element signature="e#631#921#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/ConfiguracaoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1268">
           <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Pagamento/homepage.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="64" column="111" selection-start-line="64" selection-start-column="111" selection-end-line="64" selection-end-column="111" />
-          <folding>
-            <element signature="e#132#159#0#HTML" expanded="true" />
-            <element signature="e#1953#1986#0#HTML" expanded="true" />
-            <element signature="e#2476#2498#0#HTML" expanded="true" />
-            <element signature="e#5074#5096#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Recarga/configuracao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -818,41 +694,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php">
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="604" column="45" selection-start-line="604" selection-start-column="45" selection-end-line="604" selection-end-column="45" />
-          <folding>
-            <element signature="e#45#94#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="27" column="131" selection-start-line="27" selection-start-column="131" selection-end-line="27" selection-end-column="131" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Pagamento/pagamentoCartao.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="506">
+          <caret line="39" column="82" selection-start-line="39" selection-start-column="82" selection-end-line="39" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Pagamento/homepage.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="49" column="87" selection-start-line="49" selection-start-column="87" selection-end-line="49" selection-end-column="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Entity/Pedido.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
+        <state relative-caret-position="840">
           <caret line="136" selection-start-line="136" selection-end-line="136" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/RecargaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="56" column="110" selection-start-line="56" selection-start-column="105" selection-end-line="56" selection-end-column="110" />
+        <state relative-caret-position="687">
+          <caret line="629" column="53" selection-start-line="629" selection-start-column="53" selection-end-line="629" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Repository/PedidoRepository.php">
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_files.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="131" selection-start-line="27" selection-start-column="131" selection-end-line="27" selection-end-column="131" />
+        <state relative-caret-position="520">
+          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Recarga/configuracao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="35" column="48" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="35" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Login/efetuarLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Controller/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="155" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/homepage.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/registrar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="100" column="106" lean-forward="true" selection-start-line="100" selection-start-column="60" selection-end-line="100" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/registroUsuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="107" column="49" selection-start-line="105" selection-start-column="8" selection-end-line="107" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Recarga/recarga1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" column="152" selection-start-line="36" selection-start-column="105" selection-end-line="36" selection-end-column="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Configuracao/homepage.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="32" column="63" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Configuracao/configuracao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="86" column="87" selection-start-line="86" selection-start-column="87" selection-end-line="86" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -863,17 +826,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Pagamento/pagamentoCartao.js">
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="48" column="15" lean-forward="true" selection-start-line="26" selection-start-column="11" selection-end-line="48" selection-end-column="15" />
+        <state relative-caret-position="282">
+          <caret line="56" column="142" selection-start-line="56" selection-start-column="142" selection-end-line="56" selection-end-column="142" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/public/js/Homepage/homepage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+        <state relative-caret-position="374">
+          <caret line="97" column="21" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsuarioBundle/Resources/views/Default/homepage1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="70" column="142" selection-start-line="70" selection-start-column="142" selection-end-line="70" selection-end-column="142" />
         </state>
       </provider>
     </entry>

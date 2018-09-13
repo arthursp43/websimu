@@ -14,12 +14,12 @@
                 <form id="form-login" name="form-login" action="{{ path('inicio') }}" method="POST" >
                 <div class="form-group" style="width: 350px;">
                     <label for="exampleInputEmail1">Login</label>
-                    <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp" placeholder="Login de Usuario">
+                    <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp" placeholder="Login de Usuario" data-parsley-error-message="Informe seu login!" required>
 
                 </div>
                 <div class="form-group" style="width: 350px;">
                     <label for="exampleInputPassword1">Senha</label>
-                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" data-parsley-error-message="Informe sua Senha!" required>
                 </div>
                 <div class="form-group" style="width: 350px;">
                 <center><button id="btn-login2" name="btn-login2" class="btn btn-primary btn-lg" role="button">Login</button>
@@ -30,7 +30,7 @@
                 </form>
         </div>
         <div class="col-sm-4"></div>
-        <center>
+        </center>
     </div>
 
 {% endblock %}

@@ -613,5 +613,22 @@ class RecargaController extends Controller
 
     }
 
+    /**
+     * @Route("/cartao/saldo", name="cartao_ver_saldo")
+     */
+    public function saldoAction(Request $request)
+    {
+        $cartaoid = $request->request->get("id");
+
+        $CartaoRepository = $this->getDoctrine()->getRepository('UsuarioBundle:Cartao');
+
+        /** @var Cartao $cartao */
+        $cartao = $CartaoRepository->find($cartaoid);
+
+        $saldo = $cartao->getSaldo();
+
+        return new JsonResponse(array('saldo'=>$saldo),200);
+    }
+
 
 }

@@ -52,6 +52,26 @@ Cadastro = {
 
         });
 
+        myself.campos.cpf.inputmask({
+            mask: ['999.999.999-99', '99.999.999/9999-99'],
+            keepStatic: true
+        });
+
+        myself.campos.cep.inputmask({
+            mask: ['99999-999'],
+            keepStatic: true
+        });
+
+        myself.campos.telefone.inputmask({
+            mask: ['(99) 9999 9999'],
+            keepStatic: true
+        });
+
+        myself.campos.celular.inputmask({
+            mask: ['(99) 99999 9999'],
+            keepStatic: true
+        });
+
     },
 
     recolherDadosFormularioEEnviar: function() {
@@ -83,18 +103,22 @@ Cadastro = {
 
     executarEnvio : function (dadosFormulario) {
         console.log("ate aqui");
-        $.ajax({
-            url: 'http://127.0.0.1:8000/novo-usuario',
-            type: "post",
-            cache: false,
-            blockUI: true,
-            data: dadosFormulario,
-            success: function(response) {
-                 bootbox.dialog({ message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Cadastro Criado com Sucesso!</div>' })
-                        
-                location.href='http://127.0.0.1:8000/login';
-            }
-        });
+        $("#registro").parsley().validate();
+
+        if ($("#registro").parsley().isValid()) {
+            $.ajax({
+                url: 'http://127.0.0.1:8000/novo-usuario',
+                type: "post",
+                cache: false,
+                blockUI: true,
+                data: dadosFormulario,
+                success: function (response) {
+                    bootbox.dialog({message: '<div class="text-center"><i class="fa fa-spin fa-spinner"></i> Cadastro Criado com Sucesso!</div>'})
+
+                    location.href = 'http://127.0.0.1:8000/login';
+                }
+            });
+        }
     },
 
     //PUBLICOS------------------------------------------------------------------------------------------------//

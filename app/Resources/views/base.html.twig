@@ -18,7 +18,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
 </head>
-<body style="background-image: url('https://cdn.discordapp.com/attachments/246470692353081344/481984777197584427/BG_01-100.jpg');background-repeat: no-repeat;background-size:100%;">
+<body style="background-image: url('https://cdn.discordapp.com/attachments/246470692353081344/481984777197584427/BG_01-100.jpg');background-repeat: repeat;background-size:100%;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">SIMU</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,10 @@
     '@jquery'
     '@bootstrap_js'
     %}
-    <script type="text/javascript"src="{{ asset_url }}"></script>
+        <script type="text/javascript"src="{{ asset_url }}"></script>
+        <script src="https://rawgit.com/RobinHerbots/Inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+
     {% endjavascripts %}
 {% endblock %}
 {% block javascripts %}

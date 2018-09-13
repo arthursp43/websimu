@@ -5,6 +5,18 @@ $(document).ready(function() {
             var a="<tr><td><b>Cartão</b></td><td><b>Valor</b></td><td><b>Ação</b></td></tr>";
             var total=0;
 
+        $("#valor").inputmask('decimal', {
+            'alias': 'numeric',
+            'groupSeparator': '.',
+            'autoGroup': true,
+            'digits': 2,
+            'radixPoint': ",",
+            'digitsOptional': false,
+            'allowMinus': false,
+            'prefix': 'R$ ',
+            'placeholder': ''
+        });
+
 
         // $("#add").click(function(){
         //
@@ -17,14 +29,26 @@ $(document).ready(function() {
         // });
 
         $("#add").click(function(){
+
+
+            $("#form").parsley().validate();
+
+            if ($("#form").parsley().isValid()){
+
+
+
             var dadosFormulario = {};
+            var valor=$("#valor").val();
+            var valorformatado=valor.replace(',','.');
+            valorformatado=valorformatado.substring(3, valorformatado.length);
 
-
+            console.log(valorformatado)
 
 
             dadosFormulario['cartao']= $("#cartoes").val();
-            dadosFormulario['valor'] =$("#valor").val();
+            dadosFormulario['valor'] =valorformatado;
             dadosFormulario['id'] =$("#id").val();
+
 
 
             $.ajax({
@@ -44,6 +68,7 @@ $(document).ready(function() {
                     })
                 }
             });
+            }
         });
         $("#excluir").click(function(){
             var dadosFormulario = {};

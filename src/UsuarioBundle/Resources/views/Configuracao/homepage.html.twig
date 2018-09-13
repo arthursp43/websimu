@@ -35,9 +35,9 @@
                                 <h7><font color="red">{% if warninglogin %}
                                         {{ warninglogin|default("") }}
                                         {% endif %}</font></h7>
-                                <h4 class="card-title">Login Antigo:<input type="text" class="form-control" id="loginvelho" name="loginvelho" aria-describedby="emailHelp"  required> </h4>
-                                <h5 class="card-title">Novo Login:<input type="text" class="form-control" id="novologin" name="novologin" aria-describedby="emailHelp"  required> </h5>
-                                <h5 class="card-title">Confirmar Nova Login:<input type="text" class="form-control" id="cnovologin" name="cnovologin" aria-describedby="emailHelp"  required> </h5>
+                                <h4 class="card-title">Login Antigo:<input type="text" class="form-control" id="loginvelho" name="loginvelho" aria-describedby="emailHelp" data-parsley-error-message="Campo Obrigatório" required> </h4>
+                                <h5 class="card-title">Novo Login:<input type="text" class="form-control" id="novologin" name="novologin" aria-describedby="emailHelp" data-parsley-error-message="Campo Obrigatório" required> </h5>
+                                <h5 class="card-title">Confirmar Nova Login:<input type="text" class="form-control" id="cnovologin" name="cnovologin" aria-describedby="emailHelp" data-parsley-error-message="Campo Obrigatório" required> </h5>
 
                                 <h5 class="card-title">
                                     <input type="hidden" id="login" name="login" value="">
@@ -60,9 +60,9 @@
                                 <h7><font color="red">{% if warningsenha %}
                                             {{ warningsenha|default("") }}
                                         {% endif %}</font></h7>
-                                <h4 class="card-title">Senha Antiga:<input type="password" class="form-control" id="senhavelha" name="senhavelha" aria-describedby="emailHelp" placeholder="" required> </h4>
-                                <h5 class="card-title">Nova Senha:<input type="password" class="form-control" id="novasenha" name="novasenha" aria-describedby="emailHelp" placeholder="" required> </h5>
-                                <h5 class="card-title">Confirmar Nova Senha:<input type="password" class="form-control" id="cnovasenha" name="cnovasenha" aria-describedby="emailHelp" placeholder="" required> </h5>
+                                <h4 class="card-title">Senha Antiga:</h4><input type="password" class="form-control" id="senhavelha" name="senhavelha" aria-describedby="emailHelp" placeholder="" data-parsley-error-message="Campo Obrigatório" required>
+                                <h5 class="card-title">Nova Senha:</h5><input type="password" class="form-control" id="novasenha" name="novasenha" aria-describedby="emailHelp" placeholder="" data-parsley-error-message="Campo Obrigatório" required> </h5>
+                                <h5 class="card-title">Confirmar Nova Senha:</h5><input type="password" class="form-control" id="cnovasenha" name="cnovasenha" aria-describedby="emailHelp" placeholder="" data-parsley-error-message="Campo Obrigatório" required> </h5>
 
                                 <h5 class="card-title">
                                     <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">

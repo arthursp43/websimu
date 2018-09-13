@@ -68,7 +68,7 @@
                             {% endif %}
 
                             {% if cartao.status == "Ativo" %}
-                                <p class="card-text"><a href="#" data-id="{{ cartao.numeroCartao }}">Ver Saldo!</a>        <a href="#" name="bloquear" id="bloquear" data-id="{{ cartao.numeroCartao }}" style="padding-left: 150px;">Bloquear Cartão</a></p>
+                                <p class="card-text"><a href="#" data-id="{{ cartao.numeroCartao }}" name="ver-saldo" id="ver-saldo">Ver Saldo!</a>        <a href="#" name="bloquear" id="bloquear" data-id="{{ cartao.numeroCartao }}" style="padding-left: 150px;">Bloquear Cartão</a></p>
                             {% endif %}
 
                             {% if cartao.status == "Inativo" %}

@@ -12,26 +12,26 @@
 
         </div>
         <div class="col-sm-4" style="width: 350px;">
-            <forma>
+            <form id="registro">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nome:</label>
-                    <input type="text" class="form-control" id="nome"  placeholder="Nome" required>
+                    <input type="text" class="form-control" id="nome"  placeholder="Nome" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Sobrenome:</label>
-                    <input type="text" class="form-control" id="sobrenome"  placeholder="Sobreome" required>
+                    <input type="text" class="form-control" id="sobrenome"  placeholder="Sobreome" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                 <label for="exampleInputEmail1">Data Nascimento:</label>
-                <input type="date" class="form-control" id="dtnascimento"  placeholder="XX/XX/XXXX" required>
+                <input type="date" class="form-control" id="dtnascimento"  placeholder="XX/XX/XXXX" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Sexo:</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="sexo" id="sexo" value="M" required>
+                        <input class="form-check-input" type="radio" name="sexo" id="sexo" value="M" data-parsley-error-message="Campo Obrigatório" required>
                         <label class="form-check-label" for="inlineRadio1">Masculino</label>
 
                         <input class="form-check-input" type="radio" name="sexo" id="sexo1" value="F" >
@@ -40,72 +40,72 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">CPF:</label>
-                    <input type="text" class="form-control" id="cpf" aria-describedby="emailHelp" placeholder="XXX.XXX.XXX-XX" required>
+                    <input type="text" class="form-control" id="cpf" aria-describedby="emailHelp" placeholder="XXX.XXX.XXX-XX" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Celular:</label>
-                    <input type="text" class="form-control" id="celular" aria-describedby="emailHelp" placeholder="(XX) XXXXX-XXXX" required>
+                    <input type="text" class="form-control" id="celular" aria-describedby="emailHelp" placeholder="(XX) XXXXX-XXXX" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Telefone:</label>
-                    <input type="text" class="form-control" id="telefone" aria-describedby="emailHelp" placeholder="(XX) XXXX-XXXX" required>
+                    <input type="text" class="form-control" id="telefone" aria-describedby="emailHelp" placeholder="(XX) XXXX-XXXX" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nome do Pai:</label>
-                    <input type="text" class="form-control" id="nomePai" aria-describedby="emailHelp" placeholder="Nome do Pai" required>
+                    <input type="text" class="form-control" id="nomePai" aria-describedby="emailHelp" placeholder="Nome do Pai" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email:</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">CEP:</label>
-                    <input type="text" name="cep" class="form-control" id="cep" aria-describedby="emailHelp" placeholder="XXXXX-XXX" required>
+                    <input type="text" name="cep" class="form-control" id="cep" aria-describedby="emailHelp" placeholder="XXXXX-XXX" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Complemento:</label>
-                    <input type="text" class="form-control" id="complemento" aria-describedby="emailHelp" placeholder="Número" required>
+                    <input type="text" class="form-control" id="complemento" aria-describedby="emailHelp" placeholder="Número" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Login:</label>
-                    <input type="text" class="form-control" id="login" aria-describedby="emailHelp" placeholder="Login" required>
+                    <input type="text" class="form-control" id="login" aria-describedby="emailHelp" placeholder="Login" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Senha:</label>
-                    <input type="password" class="form-control" id="senha" aria-describedby="emailHelp" placeholder="Senha" required>
+                    <input type="password" class="form-control" id="senha" aria-describedby="emailHelp" placeholder="Senha" data-parsley-error-message="Campo Obrigatório" required>
 
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Foto RG/CNH:</label>
-                    <input type="file" class="form-control"  required>
+                    <input type="file" class="form-control" data-parsley-error-message="Campo Obrigatório" required>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Foto RG:</label>
-                    <input type="file" class="form-control"  required>
+                    <input type="file" class="form-control" data-parsley-error-message="Campo Obrigatório" required>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Foto RG:</label>
-                    <input type="file" class="form-control"  required>
+                    <input type="file" class="form-control" data-parsley-error-message="Campo Obrigatório" required>
                 </div>
 
 
-                <button type="button" id="btn-salvar" name="btn-salvar" class="btn btn-primary btn-lg" role="button">Efetuar Registro!</button>
+                <a class="btn btn-primary btn-lg" href="{{ url('login') }}" role="button">Voltar</a> <button type="button" id="btn-salvar" name="btn-salvar" class="btn btn-primary btn-lg" role="button">Efetuar Registro!</button>
 
 
-            </forma>
+            </form>
         </div>
         <div class="col-sm-4"></div>
     </div>
