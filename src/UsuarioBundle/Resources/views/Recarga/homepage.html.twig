@@ -34,10 +34,6 @@
                                     <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
                                     <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
                                     <button type="submit"   class="btn btn-primary">Recarga para Meus cartões</button></form></h4>
-                            <h4 class="card-title"><form action="{{ path('cartao_novo') }}" method="post">
-                                    <input type="hidden" id="login" name="login" value="{{ usuario.idlogin.login }}">
-                                    <input type="hidden" id="senha" name="senha" value="{{ usuario.idlogin.senha }}">
-                                    <button type="submit"   class="btn btn-primary">Recarga para cartões de terceiros</button></form></h4>
                         </div>
                     </div>
                 </div>
@@ -46,20 +42,24 @@
 
             <td style="vertical-align: top;">
                 <div class="card">
-                    <h5 class="card-header" style="height: 63px;width: 373px;">Seus Pedidos</h5>
+                    <h5 class="card-header" style="height: 63px;width: 373px;">{% if pedidos %}Ultimos Pedidos Realizados{% else %}Seus Pedidos{% endif %}</h5>
                     <div class="card">
                         <div class="card-body">
                             {% if pedidos %}
+                                {% set c =0 %}
                                 {% for pedido in pedidos %}
+                                    {% if c<4 %}
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">Pedido Número: #{{ pedido.idpedido }}</h4>
-                                            <h5 class="card-title">Valor Total: {{ pedido.valor }}</h5>
+                                            <h5 class="card-title">Valor Total: R${{ pedido.valor }}</h5>
                                             <p class="card-text">Data: {{ pedido.datapedido }}</p>
                                             <p class="card-text">Status: {{ pedido.status }}</p>
 
                                         </div>
-                                    </div>
+                                    </div><br>
+                                    {% endif %}
+                                    {% set c=c+1 %}
                                 {% endfor %}
                             {% else %}
                                 <p class="card-text">Parece que você não possui nenhum Pedido ainda!</p>

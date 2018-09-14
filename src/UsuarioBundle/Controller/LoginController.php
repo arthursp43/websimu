@@ -167,7 +167,7 @@ class LoginController extends Controller
             //$usuario = "a";
 
             $usuario = $UsuarioRepository->buscaUsuario($Login);
-            $cartoes = $CartaoRepository->buscaCartoes($usuario);
+            $cartoes = $CartaoRepository->findBy(array('idusuario'=>$usuario,'status'=>'Ativo'));
 
             $notificacoes = $NotificacaoRepository->findBy(array(
                 'idUsuario'=>$usuario,

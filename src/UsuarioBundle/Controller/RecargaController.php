@@ -169,7 +169,11 @@ class RecargaController extends Controller
                 $pedido->setIdusuario($usuario);
                 $pedido->setStatus("fase1");
                 $pedido->setValor(0);
-                $pedido->setDatapedido("");
+
+
+                $data=new \DateTime();
+
+                $pedido->setDatapedido('14/09/2018');
 
                 $em = $this->getDoctrine()->getManager();
 
